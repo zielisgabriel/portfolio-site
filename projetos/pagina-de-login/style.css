@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anek+Devanagari:wght@100..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: gray;
+    height: 100vh;
+    width: 100%;
+}
+
+.login-container{
+    background: rgba(255, 255, 255, 0.8);
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 30px 40px;
+    text-align: center;
+    box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.4);
+}
+
+.email-senha-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.email-senha-container .lembrar-div{
+    display: flex;
+    text-align: left;
+}
+
+.lembrar-div .lembrar{
+    display: flex;
+    flex-direction: row;
+}
+
+.email-senha-container{
+    gap: 10px;
+}
+
+.email-senha input{
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-radius: 40px;
+    transition: .4s;
+}
+
+.email-senha input:hover{
+    transform: scale(1.01);
+}
+
+.email-senha input::placeholder{
+    font-size: 17px;
+    padding: 0 20px;
+}
+
+#check{
+    scale: 1.2;
+}
+
+.lembrar{
+    gap: 8px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.cadastrar-link a{
+    text-decoration: none;
+    color: rgb(88, 88, 66);
+}
+
+.cadastrar-link a:hover{
+    text-decoration: underline;
+}
+
+.esqueci-link a{
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.esqueci-link a:hover{
+    text-decoration: underline;
+}
+
+.login-container .cadastrar-esqueci-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    
+    height: 100%;
+    gap: 20px;
+}
+
+.login-texto{
+    margin-bottom: 40px;  
+}
+
+
+.frase{
+    color: white;
+    font-size: 30px;
+    margin-bottom: 50px;
+    text-decoration: underline;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px;
+    background-image: url(img/ceu-estrelado.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+@media (max-width: 1310px){
+    .container{
+        padding: 90px;
+    }
+}
+
+@media (max-width: 1134px){
+    .container{
+        padding: 60px;
+    }
+}
+
+@media (max-width: 1050px){
+    .container{
+        padding: 35px;
+    }
+}
+
+@media (max-width: 1000px){
+    .container{
+        flex-direction: column;
+    }
+
+    .frase h2{
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    .frase{
+        font-size: 20px;
+    }
+
+    .login-container{
+        margin-bottom:  50px;
+    }
+}
+
+@media (max-width: 430px){
+    .login-container{
+        scale: 0.8;
+    }
+
+    .frase{
+        font-size: 16px;
+        margin-top: 80px;
+    
+    }
+}
