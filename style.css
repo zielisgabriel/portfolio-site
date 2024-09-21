@@ -12,6 +12,7 @@
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 10px;
+    background: #161616;
 }
 
 header a{
@@ -214,112 +215,126 @@ label{
     font-size: 40px;
 }
 
+.projeto-nome-absolute p{
+    display: none;
+}
+
 
 
 /*Tentar fazer cards*/
 
 
 
-.area-cards-container{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    padding: 30px 50px;
-}
-
-.area-cards-content{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card{
-    display: flex;
-    width: 350px;
-    height: 180px;
-    background-color: #ffffff00;
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.06);
-    position: relative;
-    overflow: hidden;
-}
-
-.card-hover{
-    background-color: #ffffffd7;
-    backdrop-filter: blur(10px);
-    position: absolute;
-    top: 0;
-    left: 0;
+.area-cards{
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    padding: 30px 0px;
+    gap: 20px 25px;
+}
+
+.cards{
+    width: 280px;
+    height: 400px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.08);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
     flex-direction: column;
-    padding: 5px 30px;
-    gap: 5px;
-    opacity: 0;
+    gap: 15px;
+}
+
+
+/*Cards "Em breve"*/
+
+.cards .em-breve{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .em-breve h1{
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/*Cards "Em breve"*/
+
+
+
+.cards .image{
+    overflow: hidden;
+    width: 100%;
+    height: 125px;
+    background-color: #161616;
+    border-radius: 8px;
+}
+
+.cards .image img{
+    width: 100%;
+}
+
+.title i{
+    font-size: 18px;
+}
+
+.title h1{
+    font-size: 23px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+}
+
+.description .description-content p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.button-saiba-mais a button{
+    background-color: #161616;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.04);
+    border-radius: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
     transition: .4s;
 }
 
-.card-hover h2{
-    font-size: 23px;
-    color: #161616c0;
+.button-saiba-mais a button:hover{
+    background-color: #c4c4c4;
+    color: #000000;
 }
 
-.card-hover p{
-    font-size: 13px;
-    color: #000000ad;
-    font-weight: 600;
-}
-
-.card-hover button{
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.03);
-    background: #fff;
-    color: #000;
-    border: none;
-    width: 70%;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 20px;
-    height: 40px;
-    margin-top: 5px;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.card-hover a{
-    width: 100%;
-    text-align: center;
-}
-
-.card-hover button:hover{
-    background-color: #161616b0;
-    color: #fff;
-}
-
-.card:hover .card-hover{
-    opacity: 1;
-}
-
-.area-cards-content img{
-    width: 100%;
-}
-
-.projeto-nome-absolute{
+.description .button-saiba-mais{
     position: absolute;
-    bottom: 0;
     left: 0;
+    bottom: 20px;
     width: 100%;
-    background-color: #ffffff;
-    backdrop-filter: blur(50px);
-    color: #303030;
-    padding: 10px 25px;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -461,6 +476,19 @@ label{
         background: #ffffff5d;
         color: #000;
     }
+
+    .card{
+        width: 100%;
+        height: 300px;
+    }
+
+    .projeto-nome-absolute p{
+        display: block;
+        font-weight: 500;
+        padding: 10px 0;
+        font-size: 13px;
+    }
+
 }
 
 @media (max-width: 650px){
@@ -501,6 +529,16 @@ label{
     }
 }
 
+/*Só para retirar os cards "Em breve" do modo mobile*/
+
+@media (max-width: 704px){
+    .cardsEmbreve{
+        display: none;
+    }
+}
+
+/*Só para retirar os cards "Em breve" do modo mobile*/
+
 @media (max-width: 435px){
     .sobre-mim-redes-sociais-content h1{
         font-size: 40px;
@@ -508,6 +546,10 @@ label{
 
     .banner .content h1{
         font-size: 45px;
+    }
+
+    .projetos-container{
+        padding: 0 5px;
     }
 }
 
