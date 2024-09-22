@@ -91,7 +91,7 @@ header{
 
 .banner{
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -370,7 +370,7 @@ label{
 
 @media(max-width: 1190px){
     .projetos-container{
-        padding: 0 40px;
+        padding: 70px 40px;
     }
 }
 
@@ -555,7 +555,7 @@ label{
     }
 
     .projetos-container{
-        padding: 0 5px;
+        padding: 70px 5px;
     }
 }
 
