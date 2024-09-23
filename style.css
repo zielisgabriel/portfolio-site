@@ -64,7 +64,7 @@ header{
 }
 
 #header.rolagem1{
-    padding: 20px 60px;
+    padding: 20px 50px;
     box-shadow: 0 0 20px 10px rgba(92, 92, 92, 0.05);
 }
 
@@ -150,13 +150,6 @@ header{
     position: relative;
 }
 
-label{
-    font-size: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 20px 0px;
-    padding-left: 15px;
-}
 
 .redes-content{
     display: flex;
@@ -165,7 +158,25 @@ label{
 
 .redes-content a{
     padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
+
+
+
+
+.redes-content a p{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 20px 0px;
+    padding-left: 15px;
+}
+
+
+
 
 .redes-content:hover p{
     text-decoration: underline;
@@ -521,7 +532,7 @@ label{
     }
 
     #header.rolagem{
-        padding: 38px 28px;
+        padding: 25px 28px;
     }
 
     #header .list-mobile-content{
@@ -580,5 +591,26 @@ label{
 @media (max-width: 410px){
     .sobre-mim-redes-sociais-content{
         width: 100%;
+    }
+
+    .sobre-mim-redes-sociais-content h1{
+        font-size: 28px;
+        width: 100%;
+    }
+
+    .sobre-mim-redes-sociais-content p{
+        font-size: 16px;
+    }
+
+    .sobre-mim-redes-sociais-content a p{
+        font-size: 20px;
+    }
+
+    .tecnologias-content{
+        display: none;
+    }
+
+    .sobre-mim-redes-sociais{
+        padding: 55px 0px;
     }
 }
