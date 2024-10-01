@@ -45,6 +45,11 @@ header{
     z-index: 1;
 }
 
+header a{
+    position: relative;
+    z-index: 5;
+}
+
 #header.rolagem{
     padding: 38px 70px;
     background-color: #161616;
@@ -434,7 +439,7 @@ header{
         position: absolute;
         display: flex;
         width: 100%;
-        top: 100px;
+        top: 0;
         left: 0;
         justify-content: right;
         transition: .4s;
@@ -444,7 +449,7 @@ header{
     }
 
     .list-mobile.active{
-        height: 250px;
+        height: auto;
         opacity: 1;
     }
 
@@ -452,25 +457,34 @@ header{
         padding-right: 20px;
         cursor: pointer;
         font-size: 30px;
+        position: relative;
+        z-index: 150;
     }
 
     .list-mobile .list-mobile-content{
-        padding-right: 90px;
+        padding-right: 20px;
         padding-left: 20px;
-        border-bottom-left-radius: 20px;
+        width: 100%;
         overflow: hidden;
         transition: .3s;
-        padding-top: 20px;
+        padding-top: 120px;
+        z-index: 0;
+        padding-bottom: 20px;
     }
 
     header.rolagem{
         background-color: #161616;
     }
 
+    header.rolagem .list-mobile.active{
+        height: auto;
+    }
+
     header.rolagem .list-mobile-content{
         background-color: #161616;
         
-        padding-right: 70px;
+        padding-right: 0;
+        padding-top: 80px;
     }
 
     header.rolagem .mobile .btn-mobile i{
@@ -479,17 +493,13 @@ header{
 
     header.rolagem1 .list-mobile-content{
         background-color: #161616;
-        padding-right: 60px;
-    }
-
-    header.rolagem1 .list-mobile{
-        top: 80px;
+        padding-top: 70px;
     }
 
     .list-mobile a{
         display: flex;
         flex-direction: column;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
     }
 
@@ -501,9 +511,9 @@ header{
     }
 
     #header.rolagemDefault .list-mobile-content ul a{
-        background-color: #16161662;
+        background-color: #161616;
         color: #ffffff;
-        box-shadow: 0 0 10px 10px rgba(0,0,0,0.04);
+        box-shadow: 0 0 10px 20px rgba(0,0,0,0.06);
         font-weight: 650;
     }
 
