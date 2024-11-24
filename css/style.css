@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 80px;
+}
+
+body{
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+li{
+    list-style: none;
+}
+
+.apresentacao{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 1s;
+    font-size: 30px;
+}
+
+.apresentacao.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container{
+    width: 100%;
+    height: 100dvh;
+    transition: 2.5s;
+    opacity: 0;
+    display: none;
+}
+
+.container.show{
+    opacity: 1;
+}
+
+#header{
+    width: 100%;
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: .3s;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+#header a{
+    text-decoration: none;
+    color: #000;
+    opacity: .7;
+    font-weight: 500;
+    padding: 13px;
+    transition: .2s;
+    letter-spacing: 0px;
+}
+
+#header a:hover{
+    opacity: 1;
+    letter-spacing: .3px;
+}
+
+#header ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#header.active{
+    background-color: #161616;
+    padding: 12px 25px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+#header.active a{
+    opacity: 1;
+    color: #fff;
+}
+
+/*Lista Mobile*/
+.mobileListContainer{
+    display: none;
+    font-size: 18px;
+}
+
+#header.active .btnMobileList{
+    color: #fff;
+}
+
+.listBar .listMobile{
+    display: none;
+    padding-top: 100px;
+    position: absolute;
+}
+
+.listBarContainer{
+    background-color: #ffffff;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    transition: .5s;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    overflow: hidden;
+
+    height: 0px;
+    opacity: 0;
+}
+
+.listBarContainer.active{
+    opacity: 1;
+    height: 350px;
+}
+
+#header.active .listBarContainer{
+    background-color: #161616;
+    padding-top: 50px;
+}
+
+#header.active .listBarContainer.active{
+    height: 300px;
+}
+
+.listBarContent{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    gap: 10px;
+}
+/*fim Lista Mobile*/
+
+/*Botão modo noturno*/
+.modoNoturno{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.modoNoturno .modoNoturnoIcon{
+    color: #161616a4;
+    font-size: 16px;
+}
+
+.modoNoturnoContainer{
+    width: 60px;
+    height: 30px;
+    background: #a0a0a050;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.modoNoturnoContainer .modoNoturnoLever{
+    transition: .5s;
+    width: 23px;
+    height: 23px;
+    background-color: #fff;
+    border-radius: 1000px;
+    transform: translateX(0%);
+}
+
+body.modoNoturnoActive .modoNoturnoLever{
+    transform: translateX(120%);
+}
+
+#header.active .modoNoturnoContainer{
+    background: #c4c4c4a6;
+}
+
+#header.active .modoNoturnoIcon{
+    color: #fffffff1;
+}
+/*fim Botão modo noturno*/
+
+/*Sistema do modo noturno*/
+body.modoNoturnoActive .bannerTxt h1, body.modoNoturnoActive .bannerTxt h3, body.modoNoturnoActive .modoNoturnoIcon{
+    color: #fff;
+}
+
+body.modoNoturnoActive #projetos{
+    background: #161616;
+}
+
+body.modoNoturnoActive #projetos .cardProjeto{
+    background: #f8f8f81c;
+}
+
+body.modoNoturnoActive #projetos .cardProjeto:hover{
+    background: #ffffffef;
+}
+
+body.modoNoturnoActive #projetos h1{
+    color: #fff;
+}
+
+body.modoNoturnoActive .elementModoNoturnoTxt{
+    color: #fff;
+}
+
+body.modoNoturnoActive #home{
+    background-color: #161616;
+}
+
+body.modoNoturnoActive #header a{
+    opacity: 1;
+    color: #ffffff;
+}
+
+body.modoNoturnoActive .modoNoturnoContainer{
+    background: #c4c4c4a6;
+}
+
+body.modoNoturnoActive #sobre{
+    background-color: #0e0e0e;
+}
+
+body.modoNoturnoActive #contatos{
+    background-color: #0e0e0e;
+}
+/*fim Sistema do modo noturno*/
+
+#home{
+    transition: .2s;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(../assets/img/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(1);
+    filter: invert(1);
+    z-index: -1;
+    opacity: .15;
+}
+
+.bannerTxt h1{
+    color: #000;
+    font-size: 78px;
+    text-align: center;
+}
+
+.bannerTxt h3{
+    font-size: 22px;
+    text-align: center;
+    line-height: 15px;
+}
+
+#sobre{
+    width: 100%;
+    height: auto;
+    background: #161616;
+    padding: 100px 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+}
+
+#sobre h1{
+    color: #fff;
+    font-size: 45px;
+}
+
+.sobreMimContainer{
+    width: 50%;
+}
+
+.sobreMimContainer h3{
+    color: #fff;
+    font-size: 25px;
+}
+
+.sobreMimContainer p{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.redesSociaisContainer{
+    width: 50%;
+}
+
+.redesSociaisContainer .redesList{
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.redesList ul{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.redesSociaisContainer .redesList a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0;
+    transform: translateX(0px);
+    transition: .3s;
+}
+
+.redesSociaisContainer .redesList a:hover{
+    transform: translateX(3px);
+    letter-spacing: 1px;
+}
+
+/*animação de aparecer com scroll*/
+.element{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+.element.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+/*FIM animação de aparecer com scroll*/
+
+
+
+#projetos{
+    transition: .2s;
+    padding: 60px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}   
+
+#projetos h1{
+    color: #161616;
+    font-size: 35px;
+}
+
+.projetosAreaContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.cardProjeto{
+    width: 250px;
+    height: 300px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.12);
+}
+
+.cardProjeto:hover{
+    background: #fff;
+    transform: scale(101%);
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.12);
+    border-radius: 2px;
+}
+
+.cardProjeto:hover h3{
+    color: #161616;
+}
+
+.emBreve{
+    background-color: #00000001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emBreve h3{
+    color: #16161688;
+    transition: .4s;
+}
+
+/*Contatos*/
+#contatos{
+    background: #161616;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 80px 0;
+}
+
+#contatos a{
+    color: #fff;
+    font-size: 16px;
+    transition: .3s;
+}
+
+#contatos a:hover{
+    letter-spacing: .8px;
+}
+
+.contatosContainer{
+    text-align: left;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+/*fim Contatos*/
+
+
+/*responsividade*/
+@media(max-width: 1150px){
+    #projetos{
+        padding: 60px 250px;
+    }
+}
+@media(max-width: 1041px){
+    #projetos{
+        padding: 60px 130px;
+    }
+}
+@media(max-width: 900px){
+    #header ul{
+        display: none;
+    }
+    .mobileListContainer{
+        display: block;
+    }
+}
+@media(max-width: 850px){
+    #sobre{
+        flex-direction: column;
+        padding: 100px 20px;
+    }
+    .sobreMimContainer, .redesSociaisContainer{
+        width: 100%;
+    }
+}
+@media(max-width: 790px){
+    #projetos{
+        padding: 60px 10px;
+    }
+}
+@media(max-width: 595px){
+    #header{
+        padding: 50px 40px;
+    }
+    .bannerTxt h1{
+        color: #000;
+        font-size: 14vw;
+        text-align: center;
+    }
+    .bannerTxt h3{
+        font-size: 5vw;
+        text-align: center;
+        line-height: 15px;
+    }
+    #projetos h1{
+        font-size: 7vw;
+    }
+}

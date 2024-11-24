@@ -1,226 +1,112 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <title>Portfólio - José Gabriel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <title>Portfólio</title>
 </head>
 <body>
+    <div class="apresentacao">
+        <h1>Bem vindo!</h1>
+    </div>
     <div class="container">
         <header id="header">
-            <div class="home">
-                <h4>
-                    <a href="#home">Home</a>
-                </h4>
+            <div class="homeBtn element">
+                <a href="#home">Home</a>
             </div>
-
-            <div class="mobile" id="mobile">
-                <div class="btn-mobile">
-                    <label for="">
-                        <i class="fa-solid fa-bars" id="btn_mobile"></i>
-                    </label>
-                </div>
-                <div class="list-mobile">
-                    <div class="list-mobile-content">
-                        <ul>
-                            <li>
-                                <h4>
-                                    <a href="#sobre-mim">Sobre Mim</a>
-                                </h4>
-                            </li>
-                            <li>
-                                <h4>
-                                    <a href="#projetos">Projetos</a>
-                                </h4>
-                            </li>
-                            <li>
-                                <h4>
-                                    <a href="#contatos">Contatos</a>
-                                </h4>
-                            </li>
-                        </ul>
+            <ul class="listHeader">
+                <li class="element">
+                    <a href="#sobre">Sobre mim</a>
+                </li>
+                <li class="element">
+                    <a href="#projetos">Projetos</a>
+                </li>
+                <li class="element">
+                    <a href="#contatos">Contatos</a>
+                </li>
+                <li class="modoNoturno element">
+                    <i class="fa-solid fa-sun modoNoturnoIcon"></i>
+                    <div class="modoNoturnoContainer">
+                        <div class="modoNoturnoLever"></div>
+                    </div>
+                    <i class="fa-solid fa-moon modoNoturnoIcon"></i>
+                </li>
+            </ul>
+            <div class="mobileListContainer">
+                <i class="fa-solid fa-bars btnMobileList"></i>
+                <div class="listBarContainer">
+                    <div class="listBarContent">
+                        <a href="#sobre">Sobre mim</a>
+                        <a href="#projetos">Projetos</a>
+                        <a href="#contatos">Contatos</a>
                     </div>
                 </div>
-            </div>
-
-            <div class="nav">
-                <ul>
-                    <li>
-                        <h4>
-                            <a href="#sobre-mim">Sobre Mim</a>
-                        </h4>
-                    </li>
-                    <li>
-                        <h4>
-                            <a href="#projetos">Projetos</a>
-                        </h4>
-                    </li>
-                    <li>
-                        <h4>
-                            <a href="#contatos">Contatos</a>
-                        </h4>
-                    </li>
-                </ul>
             </div>
         </header>
 
-        <div class="banner" id="home">
-            <div class="content">
+        <div id="home">
+            <div class="bannerTxt element">
                 <h1>José Gabriel</h1>
-                <p>Desenvolvedor Front-end</p>
+                <h3>Desenvolvedor Front-end</h3>
             </div>
         </div>
 
-        <div class="sobre-mim-redes-sociais" id="sobre-mim">
-            <div class="sobre-mim-redes-sociais-content">
-                <div class="sobre-mim-content">
-                    <h1>
-                        Sobre Mim:
-                    </h1>
-                    <h2>
-                        &lt;José Gabriel Almeida Silveira&gt;
-                    </h2>
-                    <p>
-                        Sou estudante na área de TI, pretendendo ser um programador remunerado e consistente. Estou realmente viciado em aprender mais sobre programação, no momentos estou no 2º semestre da minha faculdade de <strong>Análise e Desenvolvimento de Sistemas</strong> onde irei estudar mais sobre <strong>HTML</strong>, <strong>CSS</strong>, <strong>JAVASCRIPT</strong>, <strong>PYTHON</strong>, <strong>PHP</strong>, <strong>MySQL</strong>, entre outros. Não me limito apenas as aulas da faculdade, vejo vídeos de programação no Youtube a procura de mais conhecimento.
-                    </p>
-                    <div class="tecnologias-content">
-                        <ul>
-                            <li>
-                                <img src="https://img.icons8.com/?size=100&id=10246&format=png&color=000000" alt="HTML" id="html">
-                            </li>
-                            <li>
-                                <img src="https://img.icons8.com/?size=100&id=10236&format=png&color=000000" alt="CSS" id="css">
-                            </li>
-                            <li>
-                                <img src="https://img.icons8.com/?size=100&id=10263&format=png&color=000000" alt="JAVASCRIPT" id="javascript">
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="redes-sociais-content">
-                    <h1>
-                        Redes Sociais:
-                    </h1>
-                    <div class="redes-container">
-                        <div class="redes-content">
-                            <a href="https://www.linkedin.com/in/josgabrielalmeida/" target="_blank">
-                                <img src="img/linkedin.png" alt="linkedin">
-                                <p>Linkedin</p>
-                            </a>
-                        </div>
-                        <div class="redes-content">
-                            <a href="https://github.com/zielisgabriel" target="_blank">
-                                <img src="img/github.png" alt="github">
-                                <p>Github</p>
-                            </a>
-                        </div>
-                        <div class="redes-content">
-                            <a href="https://www.instagram.com/zielis085/" target="_blank">
-                                <img src="img/instagram.png" alt="Instagram">
-                                <p>Instagram</p>
-                            </a>
-                        </div>
-                    </div>
+        <div id="sobre">
+            <div class="sobreMimContainer">
+                <h1 class="element">Sobre mim:</h1>
+                <h3 class="element">&lt;José Gabriel Gabriel Almeida Silveira&gt;</h3>
+                <p class="element">
+                    Sou estudante na área de TI, pretendendo ser um programador remunerado e consistente. Estou realmente viciado em aprender mais sobre programação, no momentos estou no 2º semestre da minha faculdade de <strong>Análise e Desenvolvimento de Sistemas</strong> onde irei estudar mais sobre <strong>HTML</strong>, <strong>CSS</strong>, <strong>JAVASCRIPT</strong>, <strong>PYTHON</strong>, <strong>PHP</strong>, <strong>MySQL</strong>, entre outros. Não me limito apenas as aulas da faculdade, vejo vídeos de programação no Youtube a procura de mais conhecimento.
+                </p>    
+            </div>
+            <div class="redesSociaisContainer">
+                <h1 class="element">Redes Sociais:</h1>
+                <div class="redesList">
+                    <ul>
+                        <li class="element">
+                            <a href="https://github.com/zielisgabriel" target="_blank"><i class="fa-brands fa-square-github"></i> Github</a>
+                        </li>
+                        <li class="element">
+                            <a href="https://www.linkedin.com/in/josgabrielalmeida/" target="_blank"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
+                        </li>
+                        <li class="element">
+                            <a href="https://www.instagram.com/zielis085/" target="_blank"><i class="fa-brands fa-square-instagram"></i> Instagram</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="projetos-container" id="projetos">
-            <div class="titulo">
-                <h1>Projetos:</h1>
+        <div id="projetos">
+            <h1 class="element">Área de projetos:</h1>
+            <div class="projetosAreaContainer element">
+                <div class="element cardProjeto emBreve">
+                    <h3 class="elementModoNoturnoTxt">Em Breve</h3>
+                </div>
+                <div class="element cardProjeto emBreve">
+                    <h3 class="elementModoNoturnoTxt">Em Breve</h3>
+                </div>
+                <div class="element cardProjeto emBreve">
+                    <h3 class="elementModoNoturnoTxt">Em Breve</h3>
+                </div>
+                <div class="element cardProjeto emBreve">
+                    <h3 class="elementModoNoturnoTxt">Em Breve</h3>
+                </div>
             </div>
-
-            <div class="area-cards">
-
-                <div class="cards">
-                    <div class="image">
-                        <img src="projetos/starbucks-landing-page/images/starbucks-landing-page-print.png" alt="Print do projeto de login">
-                    </div>
-                    <div class="description">
-                        <div class="title">
-                            <i class="fa-solid fa-angle-right"></i>
-                            <h1>Starbucks</h1>
-                        </div>
-                        <div class="description-content">
-                            <p>Uma Landing Page moderna de uma cafeteria famosa que desenvolvi ultilizando <strong>HTML, CSS, Javascript</strong></p>
-                        </div>
-                        <div class="button-saiba-mais">
-                            <a href="https://zielisgabriel.github.io/starbucks-landing-page/" target="_blank"><button>Saiba mais</button></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cards">
-                    <div class="image">
-                        <img src="projetos/pagina-de-login/img/img-print.jpeg" alt="Print do projeto de login">
-                    </div>
-                    <div class="description">
-                        <div class="title">
-                            <i class="fa-solid fa-angle-right"></i>
-                            <h1>Projeto Login</h1>
-                        </div>
-                        <div class="description-content">
-                            <p>Esse é meu primeiro projeto que lançarei nesse portfólio, uma página de login com design clean.</p>
-                        </div>
-                        <div class="button-saiba-mais">
-                            <a href="projetos/pagina-de-login/index.html" target="_blank"><button>Saiba mais</button></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cards">
-                    <div class="image">
-                        <img src="projetos/checkout/img/img-print.jpeg" alt="Print do projeto de checkout">
-                    </div>
-                    <div class="description">
-                        <div class="title">
-                            <i class="fa-solid fa-angle-right"></i>
-                            <h1>Projeto Checkout</h1>
-                        </div>
-                        <div class="description-content">
-                            <p>Desenvolvi um checkout com duas colunas (Endereço e Pagamento) onde existe 'inputs' para escrever suas informaçoes pessoais.</p>
-                        </div>
-                        <div class="button-saiba-mais">
-                            <a href="projetos/checkout/index.html" target="_blank"><button>Saiba mais</button></a>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <div class="cards cardsEmbreve">
-                    <div class="em-breve">
-                        <h1>Em breve</h1>
-                    </div>
-                </div>
-                <div class="cards cardsEmbreve">
-                    <div class="em-breve">
-                        <h1>Em breve</h1>
-                    </div>
-                </div>
-                <div class="cards cardsEmbreve">
-                    <div class="em-breve">
-                        <h1>Em breve</h1>
-                    </div>
-                </div>
-
-            </div>
-            
         </div>
 
-        <div class="contatos-container" id="contatos">
-            <div class="contatos-txt">
-                <h1>Contatos:</h1>
-            </div>
-            <div class="contatos-cnts">
-                <h3>Email: josegabrielas0586@gmail.com</h3>
-                <h3>Whatsapp: (85) 99151-2797</h3>
+        <div id="contatos">
+            <h1 class="element">Contatos:</h1>
+            <div class="contatosContainer">
+                <p class="element"><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/5585991512797?text=Ol%C3%A1%20Jos%C3%A9%20Gabriel" target="_blank">(85) 99151-2797</a></p>
+                <p class="element"><i class="fa-regular fa-envelope"></i> <a href="mailto:josegabrielas0586@gmail.com">josegabrielas0586@gmail.com</a></p>
+                <p class="element"><i class="fa-brands fa-linkedin-in"></i> <a href="https://www.linkedin.com/in/josgabrielalmeida/" target="_blank">José Gabriel Almeida Silveira</a></p>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
