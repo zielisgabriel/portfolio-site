@@ -1,4 +1,4 @@
-// eu tô comentando pq estou aprendendo esse novo método que aprendi, não peguei de chatgpt. ouviu? KKKKKKK
+// eu tô comentando pq estou aprendendo esse novo método que aprendi, não peguei de chatgpt. ouviu? KKKKKKKK
 
 const textChange = document.querySelector('.text-change')
 const textsUsed = [ "Web", "Front-end", "Back-end"]

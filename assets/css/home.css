@@ -71,6 +71,28 @@
                 }
             }
         }
+
+        & .social-media-list{
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            justify-content: center;
+
+            & li{
+                & a{
+                    font-size: 2.3rem;
+
+                    & i{
+                        color: #ffffff;
+                        transition: color 600ms 10ms ease-in-out;
+
+                        &:hover{
+                            color: var(--span-color);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
