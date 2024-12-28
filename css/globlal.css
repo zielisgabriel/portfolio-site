@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-family);
+    font-family: var(--font-family-poppins);
     color: #ffffff;
 }
 
@@ -10,8 +10,11 @@
     /* bg */
     --bg-standard: #69141a;
 
-    /* font */
-    --font-family: "Roboto", serif;
+    /* font | Poppins */
+    --font-family-poppins: "Poppins", serif;
+
+    /* font | Montserrat */
+    --font-family-montserrat: "Montserrat", serif;
 }
 
 #particles-js{
@@ -39,10 +42,11 @@ li{
 a{
     color: inherit;
     text-decoration: none;
+    outline: none;
 }
 
 @media(max-width: 1280px){
     .container-limit{
-        width: 100%;
+        max-width: 100%;
     }
 }
