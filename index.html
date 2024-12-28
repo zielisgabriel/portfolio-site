@@ -6,7 +6,7 @@
     <title>Web Devoloper | José Gabriel</title>
 
     <!-- styles -->
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
 
     <!-- font | Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,15 +18,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <!-- font | source code pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
 </head>
 <body>
-    <header id="header">
+    <header id="header" data-aos="fade-down" data-aos-duration="1000">
         <div class="container-limit">
             <div class="navigation">
-                <a href="#home">Home</a>
+                <p class="logo" id="btnHome">zls</p>
                 <ul>
                     <li><a href="#about-me">Sobre</a></li>
                     <li><a href="#skills">Habilidades</a></li>
@@ -40,27 +44,40 @@
     <div id="particles-js" class="header-background"></div>
     <div id="home">
         <div class="text-home-header container-limit">
-            <h1 class="my-name">Zielis Gabriel</h1>
-            <div class="sub-title">
+            <h1 class="my-name" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Zielis Gabriel</h1>
+            <div class="sub-title" data-aos="fade-up" data-aos-duration="1000">
                 <h1>Desenvolvedor</h1>
                 <span>
                     <h1 class="text-change"></h1>
                 </span>
             </div>
         </div>
-        <i class="fa-solid fa-angles-down arrow-down"></i>
+        <div class="arrow-down">
+            <p>Swipe down</p>
+            <i class="fa-solid fa-angles-down"></i>
+        </div>
     </div>
     
 
     <div id="about-me">
-        <div class="container-limit">
+        <div class="about-content container-limit">
 
         </div>
     </div>
 
-
-    <script src="./js/text-animation.js"></script>
-    <script src="./js/particles/particles.js"></script>
-    <script src="./js/particles/app.js"></script>
+    <!-- particles js -->
+    <script src="./assets/js/particles/particles.js"></script>
+    <script src="./assets/js/particles/app.js"></script>
+    <!-- aos -->
+    <script src="./assets/js/aos/aos.js"></script>
+    <!-- text animation -->
+    <script src="./assets/js/text-animation.js"></script>
+    <!-- header scrolling -->
+    <script src="./assets/js/scrollHeader.js"></script>
+    <!-- home button -->
+    <script src="./assets/js/home.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

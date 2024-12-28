@@ -1,16 +1,31 @@
 #header{
     width: 100%;
-    /* background-color: aquamarine; */
+    background-color: transparent;
     position: fixed;
     top: 0;
     padding: 50px 40px;
     z-index: 100;
+    transition: background-color 500ms, padding 500ms;
+
+    &.scrolling{
+        background-color: var(--bg-secondary);
+        padding: 15px 20px;
+    }
 
     & .container-limit{
         & .navigation{
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            & .logo{
+                font-size: var(--font-family-montserrat);
+                font-weight: 1000;
+                font-size: 35px;
+                letter-spacing: -1px;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
 
             & ul{
                 display: flex;

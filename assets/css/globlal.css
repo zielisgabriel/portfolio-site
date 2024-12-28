@@ -9,12 +9,16 @@
 :root{
     /* bg */
     --bg-standard: #69141a;
+    --bg-secondary: #310808;
 
     /* font | Poppins */
     --font-family-poppins: "Poppins", serif;
 
     /* font | Montserrat */
     --font-family-montserrat: "Montserrat", serif;
+
+    /* font | Source Code Pro */
+    --font-family-source-code-pro: "Source Code Pro", serif;
 }
 
 #particles-js{
