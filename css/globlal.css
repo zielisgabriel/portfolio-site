@@ -15,24 +15,16 @@
 }
 
 #particles-js{
+    position: absolute;
     width: 100%;
-    height: 100vh;
-    position: fixed;
+    height: 100%;
+    overflow: hidden;
     background-color: var(--bg-standard);
-    background-image: url('');
-    background-size: cover;
-    background-position: 50% 50%;
+    background-image: url("");
     background-repeat: no-repeat;
-    /* position: relative; */
-
-    &::before{
-        content: "";
-        width: 100%;
-        height: 10vh;
-        position: absolute;
-        bottom: 0;
-        background: linear-gradient( transparent, rgba(0,0,0,0.1));
-    }
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
 }
 
 .container-limit{
@@ -47,4 +39,10 @@ li{
 a{
     color: inherit;
     text-decoration: none;
+}
+
+@media(max-width: 1280px){
+    .container-limit{
+        width: 100%;
+    }
 }
