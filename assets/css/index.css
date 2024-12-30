@@ -2,4 +2,10 @@
 @import url(header.css);
 @import url(home.css);
 @import url(about-me.css);
+@import url(projects.css);
+@import url(skills.css);
+
 @import url(aos.css);
+
+/* utils */
+@import url(utils/float-btn-home.css);

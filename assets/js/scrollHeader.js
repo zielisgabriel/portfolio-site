@@ -3,6 +3,5 @@ window.addEventListener('DOMContentLoaded', () => {
     header.classList.toggle('scrolling', window.scrollY > 0)
 })
 window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolling', window.scrollY > 0)
+    header.classList.toggle('scrolling', window.scrollY > 100)
 })
-
