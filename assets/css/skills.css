@@ -1,7 +1,7 @@
 #skills{
     padding-block: 120px;
     background: var(--bg-section);
-    min-height: 600px;
+    min-height: 700px;
     overflow: hidden;
 
     & .skills-content{

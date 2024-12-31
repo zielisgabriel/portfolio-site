@@ -21,7 +21,7 @@ const cardContent = [
     {
         title: "API de Tickets de Suporte",
         img: "assets/images/projects-images/api-tickets-de-suporte.png",
-        technologies: [ technologiesImg.node ],
+        technologies: [ technologiesImg.node, technologiesImg.js ],
         description: "Desenvolvi uma <strong>API</strong> para gerenciamento de tickets de suporte, permitindo criar, atualizar, listar e excluir tickets, otimizando o registro de problemas em equipamentos. O projeto foi desenvolvido sem frameworks, usando apenas módulos nativos do Node.js. A API é eficiente, segue boas práticas de desenvolvimento backend e permite integrações futuras.",
         link: "https://github.com/zielisgabriel/tickets-de-suporte"
     },
