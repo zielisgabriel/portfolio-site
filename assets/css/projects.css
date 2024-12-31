@@ -1,6 +1,6 @@
 #projects{
     overflow: hidden;
-    height: 100%;
+    height: auto;
     padding-block: 100px;
 
     & .projects-area{
