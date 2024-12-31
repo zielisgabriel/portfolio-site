@@ -26,6 +26,10 @@
     --font-family-source-code-pro: "Source Code Pro", serif;
 }
 
+html{
+    background-color: var(--bg-secondary);
+}
+
 body, html{
     scroll-behavior: smooth;
     scroll-padding: 50px;
