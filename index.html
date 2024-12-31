@@ -30,16 +30,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-    <header id="header" data-aos="fade-down" data-aos-duration="1000">
+    <header id="header" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
         <div class="container-limit">
             <div class="navigation">
                 <p class="logo" id="btnHome">zls</p>
-                <ul>
+                <ul class="nav-desktop">
                     <li><a href="#about-me">Sobre</a></li>
                     <li><a href="#projects">Projetos</a></li>
                     <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#contacts">Contato</a></li>
                 </ul>
+
+                <div class="nav-mobile-container">
+                    <i class="fa-solid fa-bars" id="btnMobile"></i>
+                    <div class="nav-mobile">
+                        <ul>
+                            <li><a href="#about-me">Sobre</a></li>
+                            <li><a href="#projects">Projetos</a></li>
+                            <li><a href="#skills">Habilidades</a></li>
+                            <li><a href="#contacts">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -244,39 +256,39 @@
 
     <div id="contacts" class="background-standard">
         <div class="contacts-content container-limit">
-            <div class="profile-img-area">
-                <img src="./assets/images/profile.jpg" alt="Minha foto de perfil.">
+            <div class="profile-img-area" data-aos="fade-right" data-aos-duration="1000">
+                <img src="./assets/images/profile.jpg" alt="Minha foto de perfil." >
             </div>
-            <div class="text-area">
+            <div class="text-area" data-aos="fade-left" data-aos-duration="1000">
                 <h1>&#x1F4CD; Entre em contato.</h1>
                 <p style="opacity: .9;">Desenvolvedor <strong style="color: var(--span-color);">Full-stack</strong>, a procura de um estágio.</p>
                 <h3 style="margin-top: 20px;">&#x1F4F1; Redes:</h3>
                 <ul class="connection-social-media">
-                    <li>
+                    <li data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
                         <a href="https://wa.me/5585991512797">
                             <i class="fa-brands fa-whatsapp"></i>
                             <span>Whatsapp</span>
                         </a>
                     </li>
-                    <li>
+                    <li data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                         <a href="https://t.me/+5585991512797">
                             <i class="fa-brands fa-telegram"></i>
                             <span>Telegram</span>
                         </a>
                     </li>
-                    <li>
+                    <li data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                         <a href="">
                             <i class="fa-brands fa-discord"></i>
                             <span>Discord</span>
                         </a>
                     </li>
-                    <li>
+                    <li data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
                         <a href="">
                             <i class="fa-brands fa-instagram"></i>
                             <span>Instagram</span>
                         </a>
                     </li>
-                    <li>
+                    <li data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
                         <a href="https://github.com/zielisgabriel">
                             <i class="fa-brands fa-github"></i>
                             <span>Github</span>
@@ -303,6 +315,8 @@
     <script src="./assets/js/addCardProjects.js"></script>
     <!-- add skill description -->
     <script src="./assets/js/skillsRadio.js"></script>
+    <!-- button mobile -->
+    <script src="./assets/js/btnMobile.js"></script>
     <script>
         AOS.init();
     </script>
