@@ -1,0 +1,99 @@
+#skills{
+    padding-block: 120px;
+    background: var(--bg-section);
+    min-height: 700px;
+    overflow: hidden;
+
+    & .skills-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        text-align: center;
+
+        &>h1{
+            animation: letterSpacing 4s ease-in-out infinite;
+        }
+
+        & .skills-radio-list-container{
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+
+            & li{
+                & input {
+                    &:checked + label i{
+                        opacity: 1;
+                        scale: 1.1;
+                    }
+                }
+
+                & label{
+                    cursor: pointer;
+
+                    & i{
+                        transition: all 300ms ease-in-out;
+                        scale: 1;
+                        opacity: .5;
+                        font-size: 40px;
+                        animation: jumping 1400ms ease-in-out infinite;
+
+                        &.fa-html5{
+                            animation-delay: 100ms;
+                        }
+
+                        &.fa-css3-alt{
+                            animation-delay: 200ms;
+                        }
+
+                        &.fa-node-js{
+                            animation-delay: 300ms;
+                        }
+
+                        &:hover{
+                            opacity: .6;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .description-skills{
+            max-width: 500px;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 11px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.123);
+            background-color: rgba(0, 0, 0, 0.253);
+        }
+    }
+}
+
+
+@keyframes jumping{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-6px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes letterSpacing{
+    0%{
+        letter-spacing: 0;
+    }
+
+    50%{
+        letter-spacing: 2px;
+    }
+
+    100%{
+        letter-spacing: 0;
+    }
+}
