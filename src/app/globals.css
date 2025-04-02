@@ -8,12 +8,42 @@
 @theme inline {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-hover: var(--tertiary-hover);
+  --animate-vertical-bar-to-write: vertical-bar-to-write 1s steps(1) infinite;
+  --animate-item-float: item-float 2s ease-in-out infinite;
+
+  @keyframes item-float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-0.5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+;
+  @keyframes vertical-bar-to-write {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --primary: #000814;
     --secondary: #00040a;
+    --tertiary: #031a33;
+    --tertiary-hover: #072b52;
   }
 }
 
