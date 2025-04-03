@@ -1,6 +1,8 @@
-import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
+import { Header } from "@/components/Header";
 import { Lexend_Deca } from "next/font/google";
+import { SearchProjectsProvider } from "@/contexts/SearchProjectsContext";
 
 const lexendDeca = Lexend_Deca({
   variable: "--font-lexend-deca-sans-serif",
@@ -13,12 +15,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className={`${lexendDeca.className} antialiased`}>
-        <Header />
+    <SearchProjectsProvider>
+      <html lang="pt-BR">
+        <head>
+          <link rel="icon" href="/logo-zls.svg" />
+        </head>
 
-        {children}
-      </body>
-    </html>
+        <body className={`${lexendDeca.className} antialiased`}>
+          <Header />
+
+          {children}
+
+          <Footer />
+        </body>
+      </html>
+    </SearchProjectsProvider>
   );
 }
