@@ -10,6 +10,9 @@
   --color-secondary: var(--secondary);
   --color-tertiary: var(--tertiary);
   --color-tertiary-hover: var(--tertiary-hover);
+  --color-span-color: var(--span-color);
+  --color-span-color-hover: var(--span-color-hover);
+
   --animate-vertical-bar-to-write: vertical-bar-to-write 1s steps(1) infinite;
   --animate-item-float: item-float 2s ease-in-out infinite;
 
@@ -24,7 +27,7 @@
       transform: translateY(0);
     }
   }
-;
+  
   @keyframes vertical-bar-to-write {
     0% {
       opacity: 1;
@@ -40,10 +43,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #000814;
+    --primary: #030d1c;
     --secondary: #00040a;
     --tertiary: #031a33;
     --tertiary-hover: #072b52;
+    --span-color: #5b8fe3;
+    --span-color-hover: #4b82db;
   }
 }
 
@@ -53,5 +58,9 @@
 
 body {
   background: var(--primary);
-  color: #FFFFFF;
+  color: #f5f9ff;
+}
+
+strong {
+  color: var(--span-color);
 }
