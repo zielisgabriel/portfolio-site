@@ -24,11 +24,11 @@ export function Header() {
     })
 
     return (
-        <header className={twMerge(clsx("w-full py-4 z-100 fixed bg-secondary", {
+        <header className={twMerge(clsx("w-full py-4 z-100 fixed bg-secondary px-12", {
             "bg-transparent py-12": scrollYValue === 0,
         }))}>
             <div className="max-w-7xl m-auto flex justify-between items-center">
-                <Link href={"/"} title="Home">
+                <Link href={"/"} title="Home" className="hover:-translate-y-1">
                     <Image src={IconZ} alt="" width={32} height={32} />
                 </Link>
 
@@ -37,7 +37,7 @@ export function Header() {
                     <li className={clsx("hover:-translate-y-0.5 opacity-70", {
                         "border-b-2 border-b-white opacity-100 font-bold": pathname === "/",
                     })}>
-                        <Link href={"/"}>
+                        <Link title="Home" href={"/"}>
                             Home
                         </Link>
                     </li>
@@ -45,7 +45,7 @@ export function Header() {
                     <li className={clsx("hover:-translate-y-0.5 opacity-70", {
                         "border-b-2 border-b-white opacity-100 font-bold": pathname === "/projects",
                     })}>
-                        <Link href={"/projects"}>
+                        <Link title="Projetos" href={"/projects"}>
                             Projetos
                         </Link>
                     </li>
@@ -53,7 +53,7 @@ export function Header() {
                     <li className={clsx("hover:-translate-y-0.5 opacity-70", {
                         "border-b-2 border-b-white opacity-100 font-bold": pathname === "/skills",
                     })}>
-                        <Link href={"/skills"}>
+                        <Link title="Habilidades" href={"/skills"}>
                             Habilidades
                         </Link>
                     </li>
@@ -61,7 +61,7 @@ export function Header() {
                     <li className={clsx("hover:-translate-y-0.5 opacity-70", {
                         "border-b-2 border-b-white opacity-100 font-bold": pathname === "/contacts",
                     })}>
-                        <Link href={"/contacts"}>
+                        <Link title="Contatos" href={"/contacts"}>
                             Contatos
                         </Link>
                     </li>
