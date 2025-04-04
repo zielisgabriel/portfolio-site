@@ -15,6 +15,7 @@
 
   --animate-vertical-bar-to-write: vertical-bar-to-write 1s steps(1) infinite;
   --animate-item-float: item-float 2s ease-in-out infinite;
+  --animate-dots-loader: item-float 600ms  ease-in-out infinite;
 
   @keyframes item-float {
     0% {
@@ -38,6 +39,15 @@
     100% {
       opacity: 1;
     }
+  }
+}
+
+@layer utilities {
+  .delay-50 {
+    animation-delay: 50ms;
+  }
+  .delay-100 {
+    animation-delay: 100ms;
   }
 }
 
