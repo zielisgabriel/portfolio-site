@@ -27,7 +27,7 @@ export function SearchInput() {
     return (
         <form onSubmit={handleSubmit(handleSearchProjects)} className="flex h-10">
             <input type="text" { ...register("query") } placeholder="Digite aqui..." className="h-full bg-white text-black px-6 rounded-l" />
-            <button type="submit" disabled={isSubmitting} className="flex gap-2 items-center bg-secondary cursor-pointer px-4 outline-0 rounded-r">
+            <button type="submit" disabled={isSubmitting} className="flex gap-2 items-center bg-secondary cursor-pointer px-4 outline-0 rounded-r" title="Buscar">
                 <MagnifyingGlassIcon width={18} height={18} />
                 <span>
                     Buscar
