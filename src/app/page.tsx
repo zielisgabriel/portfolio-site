@@ -76,7 +76,7 @@ export default function Home() {
             </p>
 
             <div className="flex justify-center mt-4">
-              <Link href="https://docs.google.com/document/d/1gC5KiaMim0AonQozjJdtDmSZ5ISincrI9pBtgYYpa2k/edit?tab=t.0" title="Currículo">
+              <Link href="https://docs.google.com/document/d/1gC5KiaMim0AonQozjJdtDmSZ5ISincrI9pBtgYYpa2k/edit?tab=t.0" title="Currículo" target="_blank">
                 <button className="bg-span-color rounded py-2 px-6 cursor-pointer hover:bg-span-color-hover hover:-translate-y-1">
                     Visualizar CV
                 </button>
