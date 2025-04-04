@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 type Project = {
     id: string,
@@ -16,6 +16,7 @@ type SearchProjectsContextType = {
     searchProjectList: Project[]
     listProjects: () => Promise<void>
     searchProjects: (query: string) => Promise<void>
+    isLoadedList: boolean
 }
 
 type SearchProjectsProviderProps = {
@@ -27,19 +28,21 @@ export const SearchProjectsContext = createContext({} as SearchProjectsContextTy
 export function SearchProjectsProvider({ children }: SearchProjectsProviderProps) {
     const [projectsList, setProjectsList] = useState<Project[]>([])
     const [searchProjectList, setSearchProjectList] = useState<Project[]>(projectsList)
+    const [isLoadedList, setIsLoadedList] = useState<boolean>(false)
 
     async function listProjects() {
         try {
-            const response = await fetch("http://localhost:3000/api/projects", {
+            const response = await fetch("/api/projects", {
                 next: {
                     revalidate: 1800,
-                }
+                },
             })
 
             const { data } = await response.json()
 
             setProjectsList(data)
             setSearchProjectList(data)
+            setIsLoadedList(true)
         } catch (error) {
             console.error("Error when searching for projects")
         }
@@ -47,16 +50,12 @@ export function SearchProjectsProvider({ children }: SearchProjectsProviderProps
 
     async function searchProjects(query: string) {
         const projectsFiltered = projectsList.filter(project => project.name.toLowerCase().includes(query))
-
+        
         setSearchProjectList(projectsFiltered)
-    }
-
-    useEffect(() => {
-        listProjects()
-    }, [])
+    }   
 
     return (
-        <SearchProjectsContext.Provider value={{ projectsList, searchProjectList, listProjects, searchProjects }}>
+        <SearchProjectsContext.Provider value={{ projectsList, searchProjectList, listProjects, searchProjects, isLoadedList }}>
             {children}
         </SearchProjectsContext.Provider>
     )
