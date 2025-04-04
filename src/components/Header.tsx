@@ -45,7 +45,7 @@ export function Header() {
                     <li className={clsx("hover:-translate-y-0.5 opacity-70", {
                         "border-b-2 border-b-white opacity-100 font-bold": pathname === "/projects",
                     })}>
-                        <Link title="Projetos" href={"/projects"}>
+                        <Link title="Projetos" href={"/projects"} prefetch={true}>
                             Projetos
                         </Link>
                     </li>
