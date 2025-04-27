@@ -14,6 +14,14 @@ const skills = [
     {
         title: "nodejs",
         description: "Especializado no desenvolvimento back-end com Node.js, crio APIs RESTful robustas utilizando Express. Trabalho com integração de bancos de dados, implementação de middlewares e gerenciamento de rotas, seguindo princípios de clean code e boas práticas de arquitetura de software."
+    },
+    {
+        title: "reactJS",
+        description: "React é uma biblioteca JavaScript para criar interfaces de usuário modernas e interativas, me permitindo desenvolver desde sites simples até aplicações web complexas. Para recursos como rotas e renderização no servidor, usamos frameworks como o Next.js."
+    },
+    {
+        title: "java",
+        description: "Com Java, consigo criar sistemas seguros com o ecossistema Spring, que facilitar o desenvolvimento web, agiliza a criação de APIs seguras (com Spring Security), microsserviços e sistemas de grande escala."
     }
 ]
 

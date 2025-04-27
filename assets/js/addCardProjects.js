@@ -3,6 +3,7 @@ const technologiesImg = {
     css: "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white",
     js: "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black",
     nextjs: "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
+    tailwindcss: "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
     ts: "https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white",
     node: "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white",
     react: "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
@@ -12,6 +13,13 @@ const technologiesImg = {
 }
 
 const cardContent = [
+    {
+        title: "ElevenLink",
+        img: "assets/images/projects-images/elevenlinks-website-presentation.png",
+        technologies: [ technologiesImg.nextjs, technologiesImg.tailwindcss, technologiesImg.ts ],
+        description: "ElevenLinks é um Freelance que fiz para um artista musical que sentia uma dor: Quero um site lindo que centralize todos os meus links sociais, meu último lançamento, a playlist do Spotify das minhas músicas e meu canal do YouTube. Dito isso, desenvolvi esse site com um Layout da central de controle do iPhone, quase igual ao que já desenvolvi, só que feito em <strong>NextJS</strong> e <strong>TailwindCSS</strong>.",
+        link: "https://elevenlinks.vercel.app/"
+    },
     {
         title: "Gerenciador de links",
         img: "assets/images/projects-images/gerenciador-de-links-template.png",
