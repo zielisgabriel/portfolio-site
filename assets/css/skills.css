@@ -38,15 +38,15 @@
                         font-size: 40px;
                         animation: jumping 1400ms ease-in-out infinite;
 
-                        &.fa-html5{
+                        &.fa-java {
                             animation-delay: 100ms;
                         }
 
-                        &.fa-css3-alt{
+                        &.fa-node-js{
                             animation-delay: 200ms;
                         }
 
-                        &.fa-node-js{
+                        &.fa-js{
                             animation-delay: 300ms;
                         }
 
