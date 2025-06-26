@@ -1,10 +1,11 @@
 import "./globals.css";
-import { Lexend_Deca } from "next/font/google";
+import { Roboto } from "next/font/google";
+import { Header } from "@/components/Header";
 
-const lexendDeca = Lexend_Deca({
-  variable: "--font-lexend-deca-sans-serif",
+const roboto = Roboto({
+  weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
-})
+});
 
 export default function RootLayout({
   children,
@@ -17,7 +18,9 @@ export default function RootLayout({
         <link rel="icon" href="/logo-zls.svg" />
       </head>
 
-      <body className={`${lexendDeca.className} antialiased`}>
+      <body className={`${roboto.className} antialiased`}>
+        <Header />
+        
         {children}
       </body>
     </html>
