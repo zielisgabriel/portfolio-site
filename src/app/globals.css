@@ -6,16 +6,9 @@
 }
 
 @theme inline {
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-tertiary: var(--tertiary);
-  --color-tertiary-hover: var(--tertiary-hover);
-  --color-span-color: var(--span-color);
-  --color-span-color-hover: var(--span-color-hover);
+  --color-background: var(--background);
 
-  --animate-vertical-bar-to-write: vertical-bar-to-write 1s steps(1) infinite;
-  --animate-item-float: item-float 2s ease-in-out infinite;
-  --animate-dots-loader: item-float 600ms  ease-in-out infinite;
+  --animate-item-float: item-float 5s ease-in-out infinite;
 
   @keyframes item-float {
     0% {
@@ -26,18 +19,6 @@
     }
     100% {
       transform: translateY(0);
-    }
-  }
-  
-  @keyframes vertical-bar-to-write {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
     }
   }
 }
@@ -53,6 +34,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --background: #000000;
+
     --primary: #030d1c;
     --secondary: #00040a;
     --tertiary: #031a33;
@@ -67,7 +50,7 @@
 }
 
 body {
-  background: var(--primary);
+  background: var(--background);
   color: #f5f9ff;
 }
 
