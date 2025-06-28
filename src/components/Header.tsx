@@ -19,39 +19,41 @@ export function Header() {
     }
 
     function navigationButtonStyle (id: string) {
-        return `uppercase tracking-widest border-b-2 border-t-2 border-t-transparent opacity-80 hover:opacity-90 ${
+        return `uppercase tracking-widest border-b-2 border-t-2 border-t-transparent opacity-80 ${
             currentSection === id ? "border-b-foreground opacity-100" : "border-b-transparent"
         }`;
     }
 
     useEffect(() => {
-        const home = document.getElementById("home");
-        const about = document.getElementById("about");
-        const projects = document.getElementById("projects");
-        const contact = document.getElementById("contact");
+        const sections = [
+            document.getElementById("home"),
+            document.getElementById("about"),
+            document.getElementById("projects"),
+            // document.getElementById("contact"),
+        ];
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.id;
-                    setCurrentSection(id);
-                }
-            }),
-            {
-                threshold: 0.6,
+        const observer = new IntersectionObserver((entries) => {
+            const visibleEntries = entries
+                .filter(entry => entry.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+            if (visibleEntries.length > 0) {
+                const mostVisible = visibleEntries[0];
+                setCurrentSection(mostVisible.target.id);
             }
+        }, {
+            threshold: 0.2,
         });
 
-        if (home) observer.observe(home);
-        if (about) observer.observe(about);
-        if (projects) observer.observe(projects);
-        if (contact) observer.observe(contact);
+        sections.forEach(section => {
+            if (section) observer.observe(section);
+        });
 
         return () => observer.disconnect();
     }, [])
 
     return (
-        <header className={`${montserrat.className} fixed w-full`}>
+        <header className={`${montserrat.className} fixed z-100 w-full bg-gradient-to-t from-transparent to-background`}>
             <nav className="max-w-7xl mx-auto px-2 py-6">
                 <ul className="flex gap-6 justify-center items-center">
                     <li>
@@ -84,16 +86,16 @@ export function Header() {
                             </p>
                         </button>
                     </li>
-                    <li>
+                    {/* <li>
                         <button
                             className="cursor-pointer"
                             onClick={() => scrollTo("contact")}
                         >
-                            <p className={navigationButtonStyle("contacts")}>
+                            <p className={navigationButtonStyle("contact")}>
                                 Contact
                             </p>
                         </button>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
         </header>
