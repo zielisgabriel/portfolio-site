@@ -1,12 +1,6 @@
 import { FindAllProjects } from "@/services/FindAllProjects";
 import { NextRequest } from "next/server";
 
-interface ParamsProps {
-    params: {
-        page: string;
-    }
-}
-
 export async function GET(
     request: NextRequest,
     { params }: { params: { page: string } }
