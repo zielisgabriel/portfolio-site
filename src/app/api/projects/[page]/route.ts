@@ -9,7 +9,7 @@ interface ParamsProps {
 
 export async function GET(
     request: NextRequest,
-    { params }: ParamsProps
+    { params }: { params: { page: string } }
 ) {
     const page = params.page;
 

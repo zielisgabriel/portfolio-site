@@ -244,7 +244,7 @@ export default function Home() {
           <Image
             src={SpaceStation}
             alt="Space Station"
-            className="rotate-6"
+            className="rotate-6 w-sm"
             priority
           />
         </div>
