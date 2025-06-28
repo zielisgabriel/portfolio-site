@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import Astronaut2 from "../../public/astronaut2.png"
+import { Cross1Icon } from "@radix-ui/react-icons";
 
 const cinzel = Cinzel({
   weight: ["400", "500", "600", "700"],
@@ -53,7 +54,7 @@ export function ProjectsList() {
                     projectsList.map((project, index: number) => (
                         <Dialog.Root key={index}>
                             <Dialog.Trigger asChild>
-                                <button className="flex flex-col relative gap-4 max-w-xl p-4 mx-auto rounded cursor-pointer bg-primary hover:-translate-y-2 focus:outline-none">
+                                <button className="flex flex-col relative gap-4 max-w-xl p-4 mx-auto rounded cursor-pointer bg-primary hover:-translate-y-2 focus:outline-none border border-border-color">
                                     {
                                         (project.imageUrl !== null) && (
                                             <Image
@@ -61,7 +62,7 @@ export function ProjectsList() {
                                                 alt={project.title}
                                                 width={1920}
                                                 height={1080}
-                                                className="w-full"
+                                                className="w-full rounded border border-border-color"
                                             />
                                         )
                                     }
@@ -69,7 +70,7 @@ export function ProjectsList() {
                                     <div className="flex flex-col items-center gap-2">
                                         <h2 className={`${cinzel.className} sm:text-3xl text-2xl`}>
                                             {project.title}
-                                        </h2>   
+                                        </h2>
                                         <p className="md:text-lg text-md opacity-80">
                                             {project.description}
                                         </p>
@@ -78,7 +79,7 @@ export function ProjectsList() {
                                     <ul className="flex flex-wrap justify-center gap-2">
                                         {
                                             (project.technologies !== null || project.technologies !== undefined) && project.technologies.map((technology, index: number) => (
-                                                <li className="bg-foreground px-1.5 py-0.5 rounded-full" key={index}>
+                                                <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground" key={index}>
                                                     <p className="text-sm text-background font-medium">
                                                         {technology}
                                                     </p>
@@ -92,7 +93,7 @@ export function ProjectsList() {
                             <Dialog.Overlay className="fixed inset-0 bg-[rgba(0,0,0,0.5)] backdrop-blur-[4px]" />
 
                             <Dialog.Portal>
-                                <Dialog.Content className="flex flex-col gap-4 fixed bg-primary left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded p-4 focus:outline-none w-[280px] sm:w-[550px]">
+                                <Dialog.Content className="flex flex-col gap-4 fixed bg-primary left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded p-4 pt-14 focus:outline-none w-[280px] sm:w-[550px] border border-border-color">
                                     <div className="flex justify-center items-center object-cover">
                                         {
                                             (project.imageUrl !== null) && (
@@ -101,7 +102,7 @@ export function ProjectsList() {
                                                     alt={project.title}
                                                     width={1920}
                                                     height={1080}
-                                                    className="rounded w-full"
+                                                    className="rounded w-full border border-border-color"
                                                 />
                                             )
                                         }
@@ -120,7 +121,7 @@ export function ProjectsList() {
                                             <ul className="flex flex-wrap gap-2">
                                                 {
                                                     (project.technologies !== null || project.technologies !== undefined) && project.technologies.map((technology, index: number) => (
-                                                        <li className="bg-foreground py-1 px-2 rounded-full" key={index}>
+                                                        <li className="bg-foreground py-1 px-2 rounded-full border border-border-color-foreground" key={index}>
                                                             <p className="text-sm text-background font-medium">
                                                                 {technology}
                                                             </p>
@@ -141,7 +142,7 @@ export function ProjectsList() {
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
                                                             >
-                                                                <button className="w-full">
+                                                                <button className="w-full border border-border-color-foreground">
                                                                     <p className="text-md sm:text-lg bg-foreground text-background p-2 rounded hover:opacity-80 cursor-pointer">
                                                                         {repository.type} repository
                                                                     </p>
@@ -151,8 +152,29 @@ export function ProjectsList() {
                                                     );
                                                 })
                                             )}
+
+                                            {
+                                                (project.websiteUrl != null) && (
+                                                    <Link
+                                                        href={project.websiteUrl}
+                                                        title="Link to repository"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        <button className="w-full border border-border-color-foreground">
+                                                            <p className="text-md sm:text-lg bg-foreground text-background p-2 rounded hover:opacity-80 cursor-pointer">
+                                                                View website
+                                                            </p>
+                                                        </button>
+                                                    </Link>
+                                                )
+                                            }
                                         </div>
                                     </div>
+
+                                    <Dialog.Close className="absolute top-4 right-4 cursor-pointer">
+                                        <Cross1Icon className="w-6 h-6" />
+                                    </Dialog.Close>
                                 </Dialog.Content>
                             </Dialog.Portal>
                         </Dialog.Root>
