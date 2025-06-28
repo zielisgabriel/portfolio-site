@@ -1,14 +1,21 @@
 @import "tailwindcss";
 
 :root {
+  --font-family: "Libertinus Math", system-ui;
+
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #f5f9ff;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
 
   --animate-item-float: item-float 5s ease-in-out infinite;
+  --animate-dot-float-loader: item-float 600ms  ease-in-out infinite;
+  --animate-from-left-screen-to-right-screen: from-left-screen-to-right-screen 10s linear infinite;
 
   @keyframes item-float {
     0% {
@@ -19,6 +26,20 @@
     }
     100% {
       transform: translateY(0);
+    }
+  }
+
+  @keyframes from-left-screen-to-right-screen {
+    0% {
+      opacity: 0;
+      transform: translateX(-800%);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(800%);
     }
   }
 }
@@ -35,23 +56,32 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
-
-    --primary: #030d1c;
-    --secondary: #00040a;
-    --tertiary: #031a33;
-    --tertiary-hover: #072b52;
-    --span-color: #5b8fe3;
-    --span-color-hover: #4b82db;
+    --foreground: #ffffff;
+    --primary: #040404;
   }
 }
 
 * {
   transition: .2s;
+  font-family: var(--font-family);
 }
 
 body {
   background: var(--background);
   color: #f5f9ff;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--foreground);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
 }
 
 strong {
