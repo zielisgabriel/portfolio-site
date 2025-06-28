@@ -62,7 +62,7 @@ export function ParticlesBackground() {
               density: {
                 enable: true,
               },
-              value: 150,
+              value: 200,
             },
             opacity: {
               value: 0.6,
@@ -71,7 +71,7 @@ export function ParticlesBackground() {
               type: "circle",
             },
             size: {
-              value: { min: 0.4, max: 1.3 },
+              value: { min: 0.4, max: 1.8 },
             },
           },
           detectRetina: true,
