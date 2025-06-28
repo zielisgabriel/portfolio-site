@@ -1,11 +1,8 @@
 import { Cinzel } from "next/font/google";
 import { Metadata } from "next";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
-import Image from "next/image";
 
-import SpaceStation from "../../public/space-station.png"
 import { LastImageNasaApod } from "@/components/LastImageNasaApod";
-import { ProjectsList } from "@/components/ProjectsList";
 import { HomeSection } from "@/components/HomeSection";
 import { AboutSection } from "@/components/AboutSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
