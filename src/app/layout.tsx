@@ -1,11 +1,6 @@
 import "./globals.css";
-import { Roboto } from "next/font/google";
 import { Header } from "@/components/Header";
-
-const roboto = Roboto({
-  weight: ["100", "300", "400", "500", "700", "900"],
-  subsets: ["latin"],
-});
+import { Footer } from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -15,13 +10,18 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Libertinus+Math&display=swap" rel="stylesheet" />
         <link rel="icon" href="/logo-zls.svg" />
       </head>
 
-      <body className={`${roboto.className} antialiased`}>
+      <body className={`antialiased`}>
         <Header />
         
         {children}
+
+        <Footer />
       </body>
     </html>
   );
