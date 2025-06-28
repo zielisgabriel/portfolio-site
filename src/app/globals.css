@@ -20,6 +20,7 @@
   --animate-item-float: item-float 5s ease-in-out infinite;
   --animate-dot-float-loader: item-float 600ms  ease-in-out infinite;
   --animate-from-left-screen-to-right-screen: from-left-screen-to-right-screen 10s linear infinite;
+  --animate-fade-in: fade-in 500ms ease-in-out;
 
   @keyframes item-float {
     0% {
@@ -44,6 +45,15 @@
     100% {
       opacity: 0;
       transform: translateX(800%);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 }
