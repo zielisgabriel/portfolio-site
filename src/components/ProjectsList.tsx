@@ -43,11 +43,11 @@ export function ProjectsList() {
 
     return (
         <div className="flex flex-col gap-14 mx-auto items-center">
-            <ul className="flex flex-col gap-4 max-w-xl">
+            <ul className="flex relative flex-col gap-4 max-w-xl">
                 <Image
                     src={Astronaut2}
                     alt="Astronaut"
-                    className="absolute w-xl mx-auto top-[16rem] -left-[10rem] animate-item-float md:block hidden"
+                    className="absolute w-xl mx-auto top-[16rem] -left-[35rem] animate-item-float md:block hidden"
                 />
 
                 {
