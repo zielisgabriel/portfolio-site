@@ -1,0 +1,40 @@
+[
+    {
+        "id": 1,
+        "title": "Barbershop Appointment API",
+        "description": "Barbershop appointment back-end.",
+        "imageUrl": "https://zielis-gabriel-portfolio-projects-images.s3.us-east-1.amazonaws.com/barbershop-appointment-api.png",
+        "repositories": [
+            {
+                "type": "Back-end",
+                "url": "https://github.com/zielisgabriel/barbershop-appointment-api"
+            }
+        ],
+        "technologies": ["Java", "Spring Boot", "Spring Security", "PostgreSQL", "SOLID","Docker"]
+    },
+    {
+        "id": 2,
+        "title": "CrossX",
+        "description": "CrossX, application to manage students at a gym",
+        "imageUrl": "https://zielis-gabriel-portfolio-projects-images.s3.us-east-1.amazonaws.com/crossx.png",
+        "repositories": [
+            {
+                "type": "Back-end",
+                "url": "https://github.com/zielisgabriel/crossx-api"
+            },
+            {
+                "type": "Front-end",
+                "url": "https://github.com/zielisgabriel/crossx-web"
+            }
+        ],
+        "technologies": ["Next.js", "TypeScript", "TailwindCSS", "Python", "Flask", "SQLite"]
+    },
+    {
+        "id": 3,
+        "title": "ElevenLinks",
+        "description": "Freelance project to manage links",
+        "websiteUrl": "https://elevenlinks.vercel.app/",
+        "imageUrl": "https://zielis-gabriel-portfolio-projects-images.s3.us-east-1.amazonaws.com/elevenlinks.jpeg",
+        "technologies": ["Next.js", "TypeScript", "Styled Components", "Vercel", "Spotify API"]
+    }
+]
