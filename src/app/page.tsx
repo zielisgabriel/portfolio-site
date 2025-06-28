@@ -83,7 +83,7 @@ export default function Home() {
       <section id="about" className="py-12 px-4">
         <div className="grid md:grid-cols-[1.2fr_1fr] grid-cols-1 justify-center max-w-7xl mx-auto">
           <div className="flex flex-col gap-6">
-            <div className="bg-primary p-4 rounded-xl">
+            <div className="bg-primary p-4 rounded-xl border border-border-color">
               <h2 className={`${cinzel.className} text-4xl`}>
                 About me
               </h2>
@@ -99,25 +99,25 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-primary p-4 rounded-xl">
+            <div className="bg-primary p-4 rounded-xl border border-border-color">
               <h2 className={`${cinzel.className} text-4xl`}>
                 Skills
               </h2>
 
-              <div className="grid grid-cols-2 gap-x-1 gap-y-4">
+              <div className="gri d grid-cols-2 gap-x-1 gap-y-4">
                 <div>
                   <h3 className={`${cinzel.className} text-xl`}>
                     Langs
                   </h3>
 
                   <ul className="flex flex-wrap gap-2">
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         Java
                       </p>
                     </li>
 
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         TypeScript
                       </p>
@@ -131,13 +131,13 @@ export default function Home() {
                   </h3>
 
                   <ul className="flex flex-wrap gap-2">
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         Spring Framework
                       </p>
                     </li>
 
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         Express.js
                       </p>
@@ -151,19 +151,19 @@ export default function Home() {
                   </h3>
 
                   <ul className="flex flex-wrap gap-2">
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         Next.js
                       </p>
                     </li>
 
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         React.js
                       </p>
                     </li>
 
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         TailwindCSS
                       </p>
@@ -177,19 +177,19 @@ export default function Home() {
                   </h3>
 
                   <ul className="flex flex-wrap gap-2">
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         MySQL
                       </p>
                     </li>
 
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         PostgreSQL
                       </p>
                     </li>
 
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         SQLite
                       </p>
@@ -203,13 +203,13 @@ export default function Home() {
                   </h3>
 
                   <ul className="flex flex-wrap gap-2">
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         AWS
                       </p>
                     </li>
 
-                    <li className="bg-foreground px-1.5 py-0.5 rounded-full">
+                    <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
                       <p className="text-sm text-background font-medium">
                         Docker
                       </p>
