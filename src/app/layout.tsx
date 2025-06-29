@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ProgressBarScroll } from "@/components/ProgressBarScroll";
 
 export default function RootLayout({
   children,
@@ -18,6 +19,8 @@ export default function RootLayout({
 
       <body className={`antialiased`}>
         <Header />
+        
+        <ProgressBarScroll />
         
         {children}
 
