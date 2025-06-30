@@ -12,14 +12,14 @@ const cinzel = Cinzel({
 
 export function HomeSection() {
     return (
-        <section id="home" className="md:overflow-visible overflow-visible">
+        <section id="home" className="md:overflow-visible overflow-visible animate-fade-in">
             <div className="flex flex-col items-center justify-center min-h-screen max-w-7xl mx-auto">
             <div className="relative text-center">
                 <Image
-                src={Astronaut1}
-                alt="Astronaut"
-                className="absolute md:-bottom-135 md:-right-100 animate-item-float sm:-bottom-130 -bottom-105 -right-2 z-50"
-                priority
+                    src={Astronaut1}
+                    alt="Astronaut"
+                    className="absolute md:-bottom-135 md:-right-100 animate-item-float sm:-bottom-130 -bottom-105 -right-2 z-50"
+                    priority
                 />
                 
                 <h1 className={`${cinzel.className} md:text-7xl sm:text-5xl text-4xl`}>
