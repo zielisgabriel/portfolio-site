@@ -83,7 +83,7 @@ export function ParticlesBackground() {
         return <Particles
             id="tsparticles"
             options={options}
-            className="absolute inset-0 -z-50"
+            className="absolute inset-0 -z-50 animate-fade-in"
         />
     }
 
