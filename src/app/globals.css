@@ -17,7 +17,7 @@
   --color-border-color: var(--border-color);
   --color-border-color-foreground: var(--border-color-foreground);
 
-  --animate-item-float: item-float 5s ease-in-out infinite;
+  --animate-item-float: item-float 4500ms ease-in-out infinite;
   --animate-dot-float-loader: item-float 600ms  ease-in-out infinite;
   --animate-from-left-screen-to-right-screen: from-left-screen-to-right-screen 10s linear infinite;
   --animate-fade-in: fade-in 500ms ease-in-out;
@@ -27,7 +27,8 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-0.5rem);
+      transform: translateY(-0.7rem);
+      rotate: 1.5deg;
     }
     100% {
       transform: translateY(0);
