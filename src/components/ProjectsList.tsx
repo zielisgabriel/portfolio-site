@@ -137,6 +137,7 @@ export function ProjectsList() {
                                                     return (
                                                         <div key={index}>
                                                             <Link
+                                                                prefetch={true}
                                                                 href={repository.url}
                                                                 title="Link to repository"
                                                                 target="_blank"
@@ -156,6 +157,7 @@ export function ProjectsList() {
                                             {
                                                 (project.websiteUrl != null) && (
                                                     <Link
+                                                        prefetch={true}
                                                         href={project.websiteUrl}
                                                         title="Link to repository"
                                                         target="_blank"
