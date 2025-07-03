@@ -8,9 +8,13 @@
             {
                 "type": "Back-end",
                 "url": "https://github.com/zielisgabriel/barbershop-appointment-api"
+            },
+            {
+                "type": "Front-end",
+                "url": "https://github.com/zielisgabriel/barbershop-appointment-web"
             }
         ],
-        "technologies": ["Java", "Spring Boot", "Spring Security", "PostgreSQL", "SOLID","Docker"]
+        "technologies": ["Java", "Spring Boot", "Spring Security", "Next.js", "TailwindCSS", "PostgreSQL", "SOLID", "Docker"]
     },
     {
         "id": 2,
