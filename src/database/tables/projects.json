@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "title": "Barbershop Appointment API",
-        "description": "Barbershop appointment back-end.",
+        "title": "Barbershop Appointment",
+        "description": "Barbershop appointment application.",
         "imageUrl": "https://zielis-gabriel-portfolio-projects-images.s3.us-east-1.amazonaws.com/barbershop-appointment-api.png",
         "repositories": [
             {
