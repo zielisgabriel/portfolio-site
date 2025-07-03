@@ -13,7 +13,7 @@ const cinzel = Cinzel({
 export function HomeSection() {
     return (
         <section id="home" className="md:overflow-visible overflow-visible animate-fade-in">
-            <div className="flex flex-col items-center justify-center h-screen max-h-screen min-h-[40rem] max-w-7xl mx-auto">
+            <div className="flex flex-col items-center justify-center h-screen max-h-screen min-h-[34rem] max-w-7xl mx-auto">
                 <div className="relative text-center">
                     <Image
                         src={Astronaut1}
