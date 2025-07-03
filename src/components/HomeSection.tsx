@@ -13,21 +13,21 @@ const cinzel = Cinzel({
 export function HomeSection() {
     return (
         <section id="home" className="md:overflow-visible overflow-visible animate-fade-in">
-            <div className="flex flex-col items-center justify-center h-screen max-h-screen min-h-[700px] max-w-7xl mx-auto">
+            <div className="flex flex-col items-center justify-center h-screen max-h-screen min-h-[40rem] max-w-7xl mx-auto">
                 <div className="relative text-center">
                     <Image
                         src={Astronaut1}
                         alt="Astronaut"
-                        className="absolute md:-bottom-135 md:-right-100 animate-item-float sm:-bottom-145 -bottom-120 -right-2 z-50"
+                        className="absolute md:-bottom-135 md:-right-100 sm:-bottom-145 -bottom-120 -right-2 z-50 animate-item-float"
                         priority
                     />
                     
                     <h1 className={`${cinzel.className} md:text-7xl sm:text-5xl text-4xl`}>
-                    Zielis Gabriel
+                        Zielis Gabriel
                     </h1>
 
                     <h2 className={`${cinzel.className} md:text-2xl text-xl`}>
-                    Full-stack developer
+                        Full-stack developer
                     </h2>
                 </div>
 
