@@ -2,6 +2,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ProgressBarScroll } from "@/components/ProgressBarScroll";
+import { ReactLenis } from "lenis/react"
 
 export default function RootLayout({
   children,
@@ -22,6 +23,14 @@ export default function RootLayout({
         
         <ProgressBarScroll />
         
+        <ReactLenis
+          root={true}
+          options={{
+            duration: 2,
+            wheelMultiplier: 3
+          }}
+        />
+
         {children}
 
         <Footer />
