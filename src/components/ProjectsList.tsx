@@ -54,7 +54,7 @@ export function ProjectsList() {
                     projectsList.map((project, index: number) => (
                         <Dialog.Root key={index}>
                             <Dialog.Trigger asChild>
-                                <button className="flex flex-col relative gap-4 max-w-xl p-4 mx-auto rounded  bg-primary hover:cursor-none -translate-y-2 focus:outline-none border border-border-color">
+                                <button className="flex flex-col relative gap-4 max-w-xl p-4 mx-auto rounded  bg-primary/60 hover:cursor-none -translate-y-2 focus:outline-none border border-border-color">
                                     {
                                         (project.imageUrl !== null) && (
                                             <Image
@@ -93,7 +93,7 @@ export function ProjectsList() {
                             <Dialog.Overlay className="fixed z-10 inset-0 bg-[rgba(0,0,0,0.5)] backdrop-blur-[4px]" />
 
                             <Dialog.Portal>
-                                <Dialog.Content className="fixed z-50 flex flex-col gap-4 bg-primary left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded p-2 pt-14 focus:outline-none sm:w-md w-[96%] max-h-[80vh] overflow-y-scroll border border-border-color [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:bg-foreground [&::-webkit-scrollbar-thumb]:rounded [&::-webkit-scrollbar-track]:bg-background/0">
+                                <Dialog.Content className="fixed z-50 flex flex-col gap-4 bg-primary/60 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded p-2 pt-14 focus:outline-none sm:w-md w-[96%] max-h-[80vh] overflow-y-scroll border border-border-color [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:bg-foreground [&::-webkit-scrollbar-thumb]:rounded [&::-webkit-scrollbar-track]:bg-background/0">
                                     <div className="flex justify-center items-center object-cover">
                                         {
                                             (project.imageUrl !== null) && (
@@ -200,7 +200,7 @@ export function ProjectsList() {
                                     htmlFor={`projectPage${index + 1}`}
                                     className={clsx(
                                         "flex justify-center items-center w-10 h-10 rounded ",
-                                        selectedProjectPage === String(index + 1) ? "bg-foreground text-background" : "bg-primary text-foreground"
+                                        selectedProjectPage === String(index + 1) ? "bg-foreground text-background" : "bg-primary/60 text-foreground"
                                     )}
                                 >
                                     <p className="text-2xl">

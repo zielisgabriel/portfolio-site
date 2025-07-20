@@ -13,7 +13,7 @@ export function AboutSection() {
         <section id="about" className="py-12 px-4">
             <div className="grid md:grid-cols-[1.2fr_1fr] grid-cols-1 justify-center max-w-7xl mx-auto">
             <div className="flex flex-col gap-6">
-                <div className="bg-primary p-4 rounded-xl border border-border-color">
+                <div className="bg-primary/60 p-4 rounded-xl border border-border-color">
                 <h2 className={`${cinzel.className} text-4xl`}>
                     About me
                 </h2>
@@ -29,7 +29,7 @@ export function AboutSection() {
                 </div>
                 </div>
 
-                <div className="bg-primary p-4 rounded-xl border border-border-color">
+                <div className="bg-primary/60 p-4 rounded-xl border border-border-color">
                 <h2 className={`${cinzel.className} text-4xl`}>
                     Skills
                 </h2>
