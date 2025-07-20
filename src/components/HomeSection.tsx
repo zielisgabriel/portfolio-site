@@ -71,7 +71,7 @@ export function HomeSection() {
                     rel="noopener noreferrer"
                     className="mt-4 md:mb-0 mb-60"
                 >
-                    <button className="bg-foreground text-background py-2 px-4 sm:text-xl text-md font-bold rounded-full  hover:cursor-none bg-foreground/10 hover:cursor-none text-foreground">
+                    <button className="bg-foreground text-background py-2 px-4 sm:text-xl text-md font-bold rounded-full  hover:cursor-none hover:bg-foreground/10 hover:text-foreground">
                         <p>
                             View Curriculum
                         </p>
