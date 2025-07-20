@@ -6,7 +6,6 @@ import { twMerge } from "tailwind-merge";
 
 export function CustomCursor() {
     const cursorRef = useRef<HTMLDivElement>(null);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
     const [isHover, setIsHover] = useState(false);
     
     useEffect(() => {
