@@ -54,7 +54,7 @@ export function ProjectsList() {
                     projectsList.map((project, index: number) => (
                         <Dialog.Root key={index}>
                             <Dialog.Trigger asChild>
-                                <button className="flex flex-col relative gap-4 max-w-xl p-4 mx-auto rounded cursor-pointer bg-primary hover:-translate-y-2 focus:outline-none border border-border-color">
+                                <button className="flex flex-col relative gap-4 max-w-xl p-4 mx-auto rounded  bg-primary hover:cursor-none -translate-y-2 focus:outline-none border border-border-color">
                                     {
                                         (project.imageUrl !== null) && (
                                             <Image
@@ -144,7 +144,7 @@ export function ProjectsList() {
                                                                 rel="noopener noreferrer"
                                                             >
                                                                 <button className="w-full border border-border-color-foreground">
-                                                                    <p className="text-md sm:text-lg bg-foreground text-background p-2 rounded hover:opacity-80 cursor-pointer">
+                                                                    <p className="text-md sm:text-lg bg-foreground text-background p-2 rounded hover:cursor-none opacity-80 ">
                                                                         {repository.type} repository
                                                                     </p>
                                                                 </button>
@@ -164,7 +164,7 @@ export function ProjectsList() {
                                                         rel="noopener noreferrer"
                                                     >
                                                         <button className="w-full border border-border-color-foreground">
-                                                            <p className="text-md sm:text-lg bg-foreground text-background p-2 rounded hover:opacity-80 cursor-pointer">
+                                                            <p className="text-md sm:text-lg bg-foreground text-background p-2 rounded hover:cursor-none opacity-80 ">
                                                                 View website
                                                             </p>
                                                         </button>
@@ -174,7 +174,7 @@ export function ProjectsList() {
                                         </div>
                                     </div>
 
-                                    <Dialog.Close className="absolute top-4 right-4 cursor-pointer">
+                                    <Dialog.Close className="absolute top-4 right-4 ">
                                         <Cross1Icon className="w-6 h-6" />
                                     </Dialog.Close>
                                 </Dialog.Content>
@@ -199,7 +199,7 @@ export function ProjectsList() {
                                 <label
                                     htmlFor={`projectPage${index + 1}`}
                                     className={clsx(
-                                        "flex justify-center items-center w-10 h-10 rounded cursor-pointer",
+                                        "flex justify-center items-center w-10 h-10 rounded ",
                                         selectedProjectPage === String(index + 1) ? "bg-foreground text-background" : "bg-primary text-foreground"
                                     )}
                                 >

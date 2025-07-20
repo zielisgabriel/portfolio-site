@@ -84,6 +84,7 @@
 }
 
 body {
+  cursor: none;
   background: var(--background);
   color: #f5f9ff;
 

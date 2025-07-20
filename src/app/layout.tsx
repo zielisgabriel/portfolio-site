@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ProgressBarScroll } from "@/components/ProgressBarScroll";
 import { ReactLenis } from "lenis/react"
+import { CustomCursor } from "@/components/CustomCursor";
 
 export default function RootLayout({
   children,
@@ -23,6 +24,8 @@ export default function RootLayout({
         
         <ProgressBarScroll />
         
+        <CustomCursor />
+
         <ReactLenis
           root={true}
           options={{

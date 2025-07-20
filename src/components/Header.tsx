@@ -58,7 +58,7 @@ export function Header() {
                 <ul className="flex gap-6 justify-center items-center">
                     <li>
                         <button
-                            className="cursor-pointer"
+                            className="cursor-none"
                             onClick={() => scrollTo("home")}
                         >
                             <p className={navigationButtonStyle("home")}>
@@ -68,7 +68,7 @@ export function Header() {
                     </li>
                     <li>
                         <button
-                            className="cursor-pointer"
+                            className="cursor-none"
                             onClick={() => scrollTo("about")}
                         >
                             <p className={navigationButtonStyle("about")}>
@@ -78,7 +78,7 @@ export function Header() {
                     </li>
                     <li>
                         <button
-                            className="cursor-pointer"
+                            className="cursor-none"
                             onClick={() => scrollTo("projects")}
                         >
                             <p className={navigationButtonStyle("projects")}>
@@ -86,16 +86,6 @@ export function Header() {
                             </p>
                         </button>
                     </li>
-                    {/* <li>
-                        <button
-                            className="cursor-pointer"
-                            onClick={() => scrollTo("contact")}
-                        >
-                            <p className={navigationButtonStyle("contact")}>
-                                Contact
-                            </p>
-                        </button>
-                    </li> */}
                 </ul>
             </nav>
         </header>
