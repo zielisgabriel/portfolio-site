@@ -79,7 +79,6 @@
 }
 
 * {
-  transition: .2s;
   font-family: var(--font-family);
 }
 
