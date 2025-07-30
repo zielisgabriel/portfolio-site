@@ -43,7 +43,7 @@ export function ProjectsList() {
 
     return (
         <div className="flex flex-col gap-14 mx-auto items-center">
-            <ul className="flex relative flex-col gap-4 max-w-xl">
+            <ul className="grid grid-rows-3 relative flex-col gap-4 max-w-xl">
                 <Image
                     src={Astronaut2}
                     alt="Astronaut"
@@ -199,7 +199,7 @@ export function ProjectsList() {
                                 <label
                                     htmlFor={`projectPage${index + 1}`}
                                     className={clsx(
-                                        "flex justify-center items-center w-10 h-10 rounded ",
+                                        "flex justify-center items-center w-10 h-10 rounded cursor-none",
                                         selectedProjectPage === String(index + 1) ? "bg-foreground text-background" : "bg-primary/60 text-foreground"
                                     )}
                                 >
