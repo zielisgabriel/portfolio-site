@@ -1,5 +1,22 @@
 [
     {
+        "id": 4,
+        "title": "ZlsChat",
+        "description": "Chat application.",
+        "imageUrl": "https://zielis-gabriel-portfolio-projects-images.s3.us-east-1.amazonaws.com/zlschat-chat-page.png",
+        "repositories": [
+            {
+                "type": "Back-end",
+                "url": "https://github.com/zielisgabriel/zlschat-api"
+            },
+            {
+                "type": "Front-end",
+                "url": "https://github.com/zielisgabriel/zlschat-web"
+            }
+        ],
+        "technologies": ["Java", "Spring Boot", "Spring Security", "Spring WebSocket", "Next.js", "TailwindCSS", "MongoDB", "Docker"]
+    },
+    {
         "id": 1,
         "title": "Barbershop Appointment",
         "description": "Barbershop appointment application.",
