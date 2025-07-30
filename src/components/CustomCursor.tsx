@@ -7,8 +7,15 @@ import { twMerge } from "tailwind-merge";
 export function CustomCursor() {
     const cursorRef = useRef<HTMLDivElement>(null);
     const [isHover, setIsHover] = useState(false);
-    
+    const [isOffScreen, setIsOffScreen] = useState(true);
+    const [isMouseDevice, setIsMouseDevice] = useState(true);
+
     useEffect(() => {
+        const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+        setIsMouseDevice(hasFinePointer);
+
+        if (!hasFinePointer) return;
+
         function move(e: MouseEvent) {
             if (cursorRef.current) {
                 const size = isHover ? 32 : 16;
@@ -16,27 +23,44 @@ export function CustomCursor() {
                 cursorRef.current.style.top = `${e.clientY - size / 2}px`;
             }
         }
-    
+
         function handleMoveMouse(e: MouseEvent) {
             const target = e.target as HTMLElement;
-            setIsHover(!!target.closest("a, button, .hover-target"));
+            setIsHover(!!target.closest("a, button, .hover-target, label, input"));
+        }
+
+        function handleMouseLeave(e: MouseEvent) {
+            if (!e.relatedTarget) {
+                setIsOffScreen(true);
+            }
+        }
+
+        function handleMouseEnter() {
+            setIsOffScreen(false);
         }
 
         window.addEventListener("mousemove", move);
         window.addEventListener("mouseover", handleMoveMouse);
+        document.addEventListener("mouseout", handleMouseLeave);
+        document.addEventListener("mouseover", handleMouseEnter);
 
         return () => {
             window.removeEventListener("mousemove", move);
             window.removeEventListener("mouseover", handleMoveMouse);
-        }
+            document.removeEventListener("mouseout", handleMouseLeave);
+            document.removeEventListener("mouseover", handleMouseEnter);
+        };
     }, [isHover]);
+
+    if (!isMouseDevice) return null;
 
     return (
         <div
             ref={cursorRef}
             className={twMerge(clsx(
-                "fixed z-200 pointer-events-none rounded-full bg-white",
-                isHover ? "w-8 h-8 bg-transparent border-2" : "w-4 h-4"
+                "fixed z-200 pointer-events-none rounded-full bg-white transition-[width,height,color,border-color] duration-100 ease-in-out",
+                isHover ? "w-8 h-8 bg-transparent border-2" : "w-4 h-4",
+                isOffScreen && "hidden"
             ))}
             style={{
                 position: "fixed",
