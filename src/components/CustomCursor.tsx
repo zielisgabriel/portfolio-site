@@ -58,8 +58,8 @@ export function CustomCursor() {
         <div
             ref={cursorRef}
             className={twMerge(clsx(
-                "fixed z-200 pointer-events-none rounded-full bg-white transition-[width,height,color,border-color] duration-100 ease-in-out",
-                isHover ? "w-8 h-8 bg-transparent border-2" : "w-4 h-4",
+                "fixed z-200 pointer-events-none rounded-full bg-white transition-[width,height,background-color,border] duration-100 ease-in",
+                isHover ? "w-8 h-8 bg-white/0 border-2" : "w-4 h-4",
                 isOffScreen && "hidden"
             ))}
             style={{
