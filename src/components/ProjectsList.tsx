@@ -174,7 +174,7 @@ export function ProjectsList() {
                                         </div>
                                     </div>
 
-                                    <Dialog.Close className="absolute top-4 right-4 ">
+                                    <Dialog.Close className="absolute top-4 right-4 cursor-none">
                                         <Cross1Icon className="w-6 h-6" />
                                     </Dialog.Close>
                                 </Dialog.Content>
