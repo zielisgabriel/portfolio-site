@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --font-family: "Libertinus Math", system-ui;
-
-  --background: #ffffff;
-  --foreground: #171717;
-  --border-color: rgba(0, 0, 0, 0.1);
-  --border-color-foreground: rgba(255, 255, 255, 0.1);
-  --primary: #f5f9ff;
+  --background: #000000;
+  --foreground: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-foreground: rgba(0, 0, 0, 0.3);
+  --primary: #161616;
 }
 
 @theme inline {
@@ -65,16 +63,6 @@
   }
   .delay-100 {
     animation-delay: 100ms;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ffffff;
-    --border-color: rgba(255, 255, 255, 0.1);
-    --border-color-foreground: rgba(0, 0, 0, 0.3);
-    --primary: #161616;
   }
 }
 
