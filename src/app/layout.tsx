@@ -19,7 +19,7 @@ export default function RootLayout({
         <link href="/logo-zls.png" rel="icon" />
       </head>
 
-      <body className={`antialiased`}>
+      <body className={`antialiased dark`}>
         <Header />
         
         <ProgressBarScroll />

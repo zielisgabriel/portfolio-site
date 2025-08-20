@@ -4,6 +4,7 @@ import Link from "next/link";
 import { GitHubLogoIcon, InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 
 import Astronaut1 from "../../public/astronaut1.png"
+import { Button } from "./ui/button";
 
 const cinzel = Cinzel({
     weight: ["400", "500", "600", "700"],
@@ -71,11 +72,11 @@ export function HomeSection() {
                     rel="noopener noreferrer"
                     className="mt-4 md:mb-0 mb-60"
                 >
-                    <button className="bg-foreground text-background py-2 px-4 sm:text-xl text-md font-bold rounded-full hover:cursor-none hover:bg-foreground/10 hover:text-foreground">
+                    <Button>
                         <p>
                             View Curriculum
                         </p>
-                    </button>
+                    </Button>
                 </Link>
             </div>
         </section>

@@ -59,7 +59,7 @@ export function CustomCursor() {
             ref={cursorRef}
             className={twMerge(clsx(
                 "fixed z-200 pointer-events-none rounded-full bg-white transition-[width,height,background-color,border] duration-100 ease-in",
-                isHover ? "w-8 h-8 bg-white/0 border-2" : "w-4 h-4",
+                isHover ? "w-8 h-8 bg-white/0 border-2 border-white" : "w-4 h-4",
                 isOffScreen && "hidden"
             ))}
             style={{

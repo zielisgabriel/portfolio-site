@@ -2,6 +2,7 @@ import { Cinzel } from "next/font/google";
 
 import SpaceStation from "../../public/space-station.png";
 import Image from "next/image";
+import { Badge } from "./ui/badge";
 
 const cinzel = Cinzel({
     weight: ["400", "500", "600", "700"],
@@ -13,7 +14,7 @@ export function AboutSection() {
         <section id="about" className="py-12 px-4">
             <div className="grid md:grid-cols-[1.2fr_1fr] grid-cols-1 justify-center max-w-7xl mx-auto">
             <div className="flex flex-col gap-6">
-                <div className="bg-primary/60 p-4 rounded-xl border border-border-color">
+                <div className="bg-secondary/60 p-4 rounded-xl border border-border-color">
                 <h2 className={`${cinzel.className} text-4xl`}>
                     About me
                 </h2>
@@ -29,7 +30,7 @@ export function AboutSection() {
                 </div>
                 </div>
 
-                <div className="bg-primary/60 p-4 rounded-xl border border-border-color">
+                <div className="bg-secondary/60 p-4 rounded-xl border border-border-color">
                 <h2 className={`${cinzel.className} text-4xl`}>
                     Skills
                 </h2>
@@ -41,17 +42,13 @@ export function AboutSection() {
                     </h3>
 
                     <ul className="flex flex-wrap gap-2">
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             Java
-                        </p>
-                        </li>
+                        </Badge>
 
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             TypeScript
-                        </p>
-                        </li>
+                        </Badge>
                     </ul>
                     </div>
 
@@ -61,17 +58,13 @@ export function AboutSection() {
                     </h3>
 
                     <ul className="flex flex-wrap gap-2">
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             Spring Framework
-                        </p>
-                        </li>
+                        </Badge>
 
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             Express.js
-                        </p>
-                        </li>
+                        </Badge>
                     </ul>
                     </div>
 
@@ -81,23 +74,17 @@ export function AboutSection() {
                     </h3>
 
                     <ul className="flex flex-wrap gap-2">
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             Next.js
-                        </p>
-                        </li>
+                        </Badge>
 
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             React.js
-                        </p>
-                        </li>
+                        </Badge>
 
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             TailwindCSS
-                        </p>
-                        </li>
+                        </Badge>
                     </ul>
                     </div>
 
@@ -107,23 +94,17 @@ export function AboutSection() {
                     </h3>
 
                     <ul className="flex flex-wrap gap-2">
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             MySQL
-                        </p>
-                        </li>
+                        </Badge>
 
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             PostgreSQL
-                        </p>
-                        </li>
+                        </Badge>
 
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             SQLite
-                        </p>
-                        </li>
+                        </Badge>
                     </ul>
                     </div>
 
@@ -133,17 +114,13 @@ export function AboutSection() {
                     </h3>
 
                     <ul className="flex flex-wrap gap-2">
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             AWS
-                        </p>
-                        </li>
+                        </Badge>
 
-                        <li className="bg-foreground px-1.5 py-0.5 rounded-full border border-border-color-foreground">
-                        <p className="text-sm text-background font-medium">
+                        <Badge>
                             Docker
-                        </p>
-                        </li>
+                        </Badge>
                     </ul>
                     </div>
                 </div>
