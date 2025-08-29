@@ -14,7 +14,7 @@
                 "url": "https://github.com/zielisgabriel/zlschat-web"
             }
         ],
-        "technologies": ["Java", "Spring Boot", "Spring Security", "Spring WebSocket", "Next.js", "TailwindCSS", "MongoDB", "Docker", "AWS"]
+        "technologies": ["Java", "Spring Boot", "Spring Security", "Spring WebSocket", "RabbitMQ", "Next.js", "TailwindCSS", "MongoDB", "Docker", "AWS"]
     },
     {
         "id": 1,
