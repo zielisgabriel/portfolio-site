@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Cinzel } from "next/font/google";
 import Link from "next/link";
-import { ArrowTopRightIcon, GitHubLogoIcon, InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { GitHubLogoIcon, InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 
 import Astronaut1 from "../../public/astronaut1.png"
 import { Button } from "./ui/button";
