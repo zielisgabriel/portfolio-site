@@ -1,4 +1,4 @@
-import { NasaApodResponseData } from "@/@types/NasaApodResponseData";
+import { NasaApodResponseData } from "@/@types/nasa-apod-response-data";
 import Image from "next/image";
 
 export async function LastImageNasaApod() {
