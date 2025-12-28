@@ -77,7 +77,7 @@ export function ProjectsList() {
                                                     alt={project.title}
                                                     width={1920}
                                                     height={1080}
-                                                    className="w-full rounded border border-border-color"
+                                                    className="w-full rounded-lg border border-border shadow-md shadow-background/60"
                                                 />
                                             )
                                         }
