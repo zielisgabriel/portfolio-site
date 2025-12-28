@@ -1,9 +1,9 @@
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { ProgressBarScroll } from "@/components/ProgressBarScroll";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { ProgressBarScroll } from "@/components/progress-bar-scroll";
 import { ReactLenis } from "lenis/react"
-import { CustomCursor } from "@/components/CustomCursor";
+import { CustomCursor } from "@/components/custom-cursor";
 
 export default function RootLayout({
   children,
@@ -20,23 +20,23 @@ export default function RootLayout({
       </head>
 
       <body className={`antialiased dark`}>
-        <Header />
-        
-        <ProgressBarScroll />
-        
-        <CustomCursor />
+          <Header />
+          
+          <ProgressBarScroll />
+          
+          <CustomCursor />
 
-        <ReactLenis
-          root={true}
-          options={{
-            duration: 2,
-            wheelMultiplier: 3
-          }}
-        />
+          <ReactLenis
+            root={true}
+            options={{
+              duration: 2,
+              wheelMultiplier: 3
+            }}
+          />
 
-        {children}
+          {children}
 
-        <Footer />
+          <Footer />
       </body>
     </html>
   );
