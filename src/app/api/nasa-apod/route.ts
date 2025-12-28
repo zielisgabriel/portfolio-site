@@ -1,7 +1,6 @@
-import { FetchLastApodNasa } from "@/services/FetchLastApodNasa";
-import { NextRequest } from "next/server";
+import { FetchLastApodNasa } from "@/services/fetch-last-apod-nasa";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
     try {
         const data = await new FetchLastApodNasa().execute();
         const transformed = { ...data, source: 'proxied-through-nextjs' };
