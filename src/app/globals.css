@@ -145,6 +145,7 @@
 body {
   cursor: none;
   color: #f5f9ff;
+  background: #000000;
 
   &::-webkit-scrollbar {
     width: 6px;
