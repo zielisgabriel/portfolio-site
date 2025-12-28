@@ -1,4 +1,4 @@
-import { DotsLoader } from "@/components/DotsLoader";
+import { DotsLoader } from "@/components/dots-loader";
 
 export default function Loading() {
     return (
