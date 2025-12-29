@@ -24,7 +24,7 @@ export function ProjectsSection() {
     
     return (
         <QueryClientProvider client={queryClient}>
-            <section className="flex flex-col relative md:py-12 py-8 pb-0 px-4 md:gap-8 gap-4 overflow-hidden">
+            <section id="projects" className="flex flex-col relative md:py-12 py-8 pb-0 px-4 md:gap-8 gap-4 overflow-hidden">
                 <div className="absolute top-[60%] left-1/2 -z-10 brightness-90 animate-from-left-screen-to-right-screen -rotate-10">
                 <Image
                     src={SpaceStation}
