@@ -4,7 +4,7 @@ import { ProjectResponse } from "@/@types/project-response";
 import projects from "@/database/tables/projects.json";
 
 export async function getProjectsService(page: number): Promise<ProjectResponse> {
-  const projectsPerPage = 3;
+  const projectsPerPage = 4;
 
   const startIndex = (page - 1) * projectsPerPage;
   const endIndex = startIndex + projectsPerPage;
