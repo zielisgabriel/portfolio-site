@@ -1,5 +1,7 @@
 import { NasaApodResponseData } from "@/@types/nasa-apod-response-data";
 import Image from "next/image";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { Badge } from "./ui/badge";
 
 export async function LastImageNasaApod() {
     let nasaApod: NasaApodResponseData | null = null;
@@ -19,29 +21,47 @@ export async function LastImageNasaApod() {
     }
 
     return (
-        <div className="flex flex-col max-w-xl mx-auto items-center justify-center px-4">
-            <h1 className="text-3xl">
-                {nasaApod.title}
-            </h1>
+        <div className="py-20 md:py-32">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12">
+                    <Badge variant="outline" className="mb-4">
+                        NASA Astronomy Picture of the Day
+                    </Badge>
+                    <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+                        Daily Space Image
+                    </h2>
+                </div>
 
-            <Image
-                src={nasaApod.url}
-                alt={nasaApod.title}
-                width={700}
-                height={700}
-                quality={100}
-                className="rounded-xl w-full"
-                priority
-            />
-
-            <div className="flex justify-between w-full">
-                <h3 className="text-md">
-                    {new Date(nasaApod.date).toLocaleDateString("pt-BR")}
-                </h3>
-
-                <h3 className="text-md">
-                    &copy; {nasaApod.copyright}
-                </h3>
+                <Card className="overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm">
+                    <div className="relative aspect-video overflow-hidden">
+                        <Image
+                            src={nasaApod.url}
+                            alt={nasaApod.title}
+                            fill
+                            quality={90}
+                            className="object-cover"
+                            priority
+                        />
+                    </div>
+                    
+                    <CardHeader>
+                        <CardTitle className="text-xl">
+                            {nasaApod.title}
+                        </CardTitle>
+                        <CardDescription className="flex items-center gap-4 text-sm">
+                            <span>
+                                {new Date(nasaApod.date).toLocaleDateString("en-US", {
+                                    day: "2-digit",
+                                    month: "long",
+                                    year: "numeric"
+                                })}
+                            </span>
+                            {nasaApod.copyright && (
+                                <span>© {nasaApod.copyright}</span>
+                            )}
+                        </CardDescription>
+                    </CardHeader>
+                </Card>
             </div>
         </div>
     );
