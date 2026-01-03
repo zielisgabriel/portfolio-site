@@ -1,22 +1,41 @@
 import { NasaApodResponseData } from "@/@types/nasa-apod-response-data";
 import Image from "next/image";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
+
+async function fetchWithTimeout(url: string, timeout = 5000): Promise<Response> {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeout);
+    
+    try {
+        const response = await fetch(url, {
+            method: "GET",
+            cache: "force-cache",
+            signal: controller.signal,
+        });
+        clearTimeout(id);
+        return response;
+    } catch (error) {
+        clearTimeout(id);
+        throw error;
+    }
+}
 
 export async function LastImageNasaApod() {
     let nasaApod: NasaApodResponseData | null = null;
+    
+    if (!process.env.BASE_URL) {
+        return null;
+    }
+    
     try {
-        const response = await fetch(`${process.env.BASE_URL}/api/nasa-apod`, {
-            method: "GET",
-            cache: "force-cache",
-        });
-
+        const response = await fetchWithTimeout(`${process.env.BASE_URL}/api/nasa-apod`, 5000);
         nasaApod = await response.json();
     } catch (error) {
-        nasaApod = null;
+        return null;
     }
 
-    if (nasaApod === null) {
+    if (nasaApod === null || !nasaApod.url) {
         return null;
     }
 
