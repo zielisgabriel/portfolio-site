@@ -1,10 +1,9 @@
 "use client";
 
-import { Cinzel } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 
-import Astronaut2 from "../../public/astronaut2.png"
+import Astronaut2 from "../../public/astronaut2.png";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogOverlay, DialogPortal, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { ScrollArea } from "./ui/scroll-area";
@@ -14,12 +13,8 @@ import { keepPreviousData, useQuery, useQueryClient } from "@tanstack/react-quer
 import { ProjectResponse } from "@/@types/project-response";
 import { Pagination } from "./pagination";
 import { useEffect, useState } from "react";
-import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
-
-const cinzel = Cinzel({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-});
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import { ExternalLink, Github } from "lucide-react";
 
 export function ProjectsList() {
     const [page, setPage] = useState<number>(1);
@@ -35,164 +30,156 @@ export function ProjectsList() {
     });
 
     useEffect(() => {
-    if (projectsResponse?.totalPages && page < projectsResponse.totalPages) {
+        if (projectsResponse?.totalPages && page < projectsResponse.totalPages) {
             queryClient.prefetchQuery({
-            queryKey: ["projects", page + 1],
-            queryFn: () => getProjectsService(page + 1)
-        });
-    }
+                queryKey: ["projects", page + 1],
+                queryFn: () => getProjectsService(page + 1)
+            });
+        }
     }, [page, projectsResponse, queryClient]);
 
     if (isLoading) {
-        return null;
+        return (
+            <div className="flex items-center justify-center py-20">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-foreground"></div>
+            </div>
+        );
     }
 
     return (
-        <div className="flex flex-col gap-14 mx-auto items-center">
-            <ul className="flex flex-col relative gap-4 max-w-xl">
-                <Image
-                    src={Astronaut2}
-                    alt="Astronaut"
-                    className="absolute w-xl mx-auto top-[16rem] -left-[35rem] animate-item-float md:block hidden"
-                />
+        <div className="flex flex-col gap-12 relative">
+            <Image
+                src={Astronaut2}
+                alt="Astronaut"
+                className="absolute w-80 -left-96 top-20 animate-item-float md:block hidden"
+            />
 
-                {
-                    projectsResponse?.projects.map((project, index: number) => (
-                        <Dialog key={index}>
-                            <DialogTrigger>
-                                <Card>
-                                    <CardHeader>
-                                        <CardTitle className="text-2xl">
-                                            {project.title}
-                                        </CardTitle>
-                                        <CardDescription className="text-md">
-                                            {project.description}
-                                        </CardDescription>
-                                    </CardHeader>
-                                    <CardContent>
-                                        {
-                                            (project.imageUrl !== null) && (
-                                                <Image
-                                                    src={project.imageUrl}
-                                                    alt={project.title}
-                                                    width={1920}
-                                                    height={1080}
-                                                    className="w-full rounded-lg border border-border shadow-md shadow-background/60"
-                                                />
-                                            )
-                                        }
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                {projectsResponse?.projects.map((project, index: number) => (
+                    <Dialog key={index}>
+                        <DialogTrigger asChild>
+                            <Card className="group cursor-none hover:border-foreground/30 transition-all duration-300 overflow-hidden bg-card/50 backdrop-blur-sm border-border/50">
+                                <CardHeader className="pb-4">
+                                    <CardTitle className="text-xl group-hover:text-foreground transition-colors">
+                                        {project.title}
+                                    </CardTitle>
+                                    <CardDescription className="line-clamp-2">
+                                        {project.description}
+                                    </CardDescription>
+                                </CardHeader>
+                                
+                                {project.imageUrl && (
+                                    <CardContent className="pb-4">
+                                        <div className="relative overflow-hidden rounded-lg border border-border/50">
+                                            <Image
+                                                src={project.imageUrl}
+                                                alt={project.title}
+                                                width={600}
+                                                height={340}
+                                                className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
+                                            />
+                                        </div>
                                     </CardContent>
-                                    <CardFooter>
-                                        <ul className="flex flex-wrap justify-center gap-2">
-                                            {
-                                                (project.technologies !== null || project.technologies !== undefined) && project.technologies.map((technology, index: number) => (
-                                                    <Badge key={index}>
-                                                        {technology}
-                                                    </Badge>
-                                                ))
-                                            }
-                                        </ul>
-                                    </CardFooter>
-                                </Card>
-                            </DialogTrigger>
+                                )}
+                                
+                                <CardFooter>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.technologies?.slice(0, 4).map((tech, i) => (
+                                            <Badge key={i} variant="secondary" className="text-xs">
+                                                {tech}
+                                            </Badge>
+                                        ))}
+                                        {project.technologies && project.technologies.length > 4 && (
+                                            <Badge variant="outline" className="text-xs">
+                                                +{project.technologies.length - 4}
+                                            </Badge>
+                                        )}
+                                    </div>
+                                </CardFooter>
+                            </Card>
+                        </DialogTrigger>
 
-                            <DialogOverlay className="fixed z-10 inset-0 bg-[rgba(0,0,0,0.5)] backdrop-blur-[4px]" />
+                        <DialogOverlay className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" />
 
-                            <DialogPortal>
-                                <DialogContent>
-                                    <ScrollArea className="max-h-full w-full rounded-md">
-                                        <div className="flex justify-center items-center object-cover">
-                                            {
-                                                (project.imageUrl !== null) && (
-                                                    <Image
-                                                        src={project.imageUrl}
-                                                        alt={project.title}
-                                                        width={1920}
-                                                        height={1080}
-                                                        className="rounded w-full border border-border-color"
-                                                    />
-                                                )
-                                            }
+                        <DialogPortal>
+                            <DialogContent className="max-w-2xl">
+                                <ScrollArea className="max-h-[80vh]">
+                                    {project.imageUrl && (
+                                        <div className="relative overflow-hidden rounded-lg mb-6">
+                                            <Image
+                                                src={project.imageUrl}
+                                                alt={project.title}
+                                                width={800}
+                                                height={450}
+                                                className="w-full aspect-video object-cover"
+                                            />
+                                        </div>
+                                    )}
+
+                                    <div className="space-y-6">
+                                        <div>
+                                            <DialogTitle className="text-2xl font-bold mb-2">
+                                                {project.title}
+                                            </DialogTitle>
+                                            <DialogDescription className="text-base">
+                                                {project.description}
+                                            </DialogDescription>
                                         </div>
 
-                                        <div className="flex flex-col gap-4 justify-between h-full mt-4">
-                                            <div className="flex flex-col gap-2">
-                                                <DialogTitle className={`${cinzel.className} text-2xl sm:text-3xl text-foreground`}>
-                                                    {project.title}
-                                                </DialogTitle>
+                                        <div className="flex flex-wrap gap-2">
+                                            {project.technologies?.map((tech, i) => (
+                                                <Badge key={i} variant="secondary">
+                                                    {tech}
+                                                </Badge>
+                                            ))}
+                                        </div>
 
-                                                <DialogDescription>
-                                                    {project.description}
-                                                </DialogDescription>
-
-                                                <div className="flex flex-wrap gap-2">
-                                                    {
-                                                        (project.technologies !== null || project.technologies !== undefined) && project.technologies.map((technology, index: number) => (
-                                                            <Badge key={index}>
-                                                                {technology}
-                                                            </Badge>
-                                                        ))
-                                                    }
-                                                </div>
-                                            </div>
-
-                                            <div className="flex flex-col gap-4">
-                                                {Array.isArray(project.repositories) && project.repositories.length > 0 && (
-                                                    project.repositories.map((repository, index: number) => {
-                                                        return (
-                                                            <div key={index}>
-                                                                <Link
-                                                                    prefetch={true}
-                                                                    href={repository.url}
-                                                                    title="Link to repository"
-                                                                    target="_blank"
-                                                                    rel="noopener noreferrer"
-                                                                >
-                                                                    <Button className="w-full">
-                                                                        <p>
-                                                                            {repository.type} repository
-                                                                        </p>
-                                                                    </Button>
-                                                                </Link>
-                                                            </div>
-                                                        );
-                                                    })
-                                                )}
-
-                                                {
-                                                    (project.websiteUrl != null) && (
+                                        <div className="flex flex-col gap-3 pt-4">
+                                            {Array.isArray(project.repositories) && project.repositories.length > 0 && (
+                                                project.repositories.map((repository, i) => (
+                                                    <Button key={i} variant="outline" className="w-full justify-start cursor-none" asChild>
                                                         <Link
-                                                            prefetch={true}
-                                                            href={project.websiteUrl}
-                                                            title="Link to repository"
+                                                            href={repository.url}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                         >
-                                                            <Button variant={"secondary"} className="w-full">
-                                                                <p>
-                                                                    View website
-                                                                </p>
-                                                            </Button>
+                                                            <Github className="mr-2 h-4 w-4" />
+                                                            {repository.type} Repository
                                                         </Link>
-                                                    )
-                                                }
-                                            </div>
-                                        </div>
-                                        <DialogClose />
-                                    </ScrollArea>
-                                </DialogContent>
-                            </DialogPortal>
-                        </Dialog>
-                    ))
-                }
-            </ul>
+                                                    </Button>
+                                                ))
+                                            )}
 
-            <Pagination
-                page={page}
-                totalPages={projectsResponse?.totalPages ?? 1}
-                onPrev={() => setPage(p => Math.max(p - 1, 1))}
-                onNext={() => setPage(p => Math.min(p + 1, projectsResponse!.totalPages))}
-            />
+                                            {project.websiteUrl && (
+                                                <Button className="w-full justify-start cursor-none" asChild>
+                                                    <Link
+                                                        href={project.websiteUrl}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        <ExternalLink className="mr-2 h-4 w-4" />
+                                                        View Website
+                                                    </Link>
+                                                </Button>
+                                            )}
+                                        </div>
+                                    </div>
+                                </ScrollArea>
+                                <DialogClose />
+                            </DialogContent>
+                        </DialogPortal>
+                    </Dialog>
+                ))}
+            </div>
+
+            <div className="flex justify-center">
+                <Pagination
+                    page={page}
+                    totalPages={projectsResponse?.totalPages ?? 1}
+                    onPrev={() => setPage(p => Math.max(p - 1, 1))}
+                    onNext={() => setPage(p => Math.min(p + 1, projectsResponse!.totalPages))}
+                />
+            </div>
         </div>
     );
 }
