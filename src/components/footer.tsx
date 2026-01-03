@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { HomeButton } from "./home-button";
+import { Button } from "./ui/button";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -17,24 +18,34 @@ export function Footer() {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <Link
-                            href="https://github.com/zielisgabriel"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 rounded-lg text-muted-foreground hover:text-foreground transition-colors cursor-none"
-                            aria-label="GitHub"
+                        <Button
+                            size={"icon"}
+                            variant={"ghost"}
+                            asChild
                         >
-                            <GitHubLogoIcon className="h-5 w-5" />
-                        </Link>
-                        <Link
-                            href="https://www.linkedin.com/in/josgabrielalmeida/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 rounded-lg text-muted-foreground hover:text-foreground transition-colors cursor-none"
-                            aria-label="LinkedIn"
+                            <Link
+                                href="https://github.com/zielisgabriel"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub"
+                            >
+                                <GitHubLogoIcon className="h-8 w-8" />
+                            </Link>
+                        </Button>
+                        <Button
+                            size={"icon"}
+                            variant={"ghost"}
+                            asChild
                         >
-                            <LinkedInLogoIcon className="h-5 w-5" />
-                        </Link>
+                            <Link
+                                href="https://www.linkedin.com/in/josgabrielalmeida/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
+                            >
+                                <LinkedInLogoIcon className="h-8 w-8" />
+                            </Link>
+                        </Button>
                     </div>
                 </div>
             </div>
