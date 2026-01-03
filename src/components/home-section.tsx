@@ -73,7 +73,7 @@ export function HomeSection() {
                                 }}
                             >
                                 View Projects
-                                <ArrowDown className="ml-2 h-4 w-4" />
+                                <ArrowDown className="h-4 w-4" />
                             </Link>
                         </Button>
                         <Button variant="outline" size="lg" className="cursor-none" asChild>
@@ -83,7 +83,7 @@ export function HomeSection() {
                                 rel="noopener noreferrer"
                             >
                                 View Resume
-                                <ExternalLink className="ml-2 h-4 w-4" />
+                                <ExternalLink className="h-4 w-4" />
                             </Link>
                         </Button>
                     </div>
