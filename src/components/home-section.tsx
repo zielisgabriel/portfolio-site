@@ -1,85 +1,97 @@
+"use client";
+
 import Image from "next/image";
-import { Cinzel } from "next/font/google";
 import Link from "next/link";
-import { GitHubLogoIcon, InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
-
-import Astronaut1 from "../../public/astronaut1.png"
+import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
-import { ExternalLinkIcon } from "lucide-react";
-
-const cinzel = Cinzel({
-    weight: ["400", "500", "600", "700"],
-    subsets: ["latin"],
-})
+import { ArrowDown, ExternalLink } from "lucide-react";
+import Astronaut1 from "../../public/astronaut1.png";
 
 export function HomeSection() {
     return (
-        <section id="home" className="md:overflow-visible overflow-visible animate-fade-in">
-            <div className="flex flex-col items-center justify-center h-screen max-h-screen min-h-[34rem] max-w-7xl mx-auto">
-                <div className="relative text-center">
+        <section id="home" className="relative min-h-screen flex items-center justify-center animate-fade-in">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div className="relative text-center space-y-6">
                     <Image
                         src={Astronaut1}
-                        alt="Astronaut"
-                        className="absolute md:-bottom-135 md:-right-100 sm:-bottom-145 -bottom-120 -right-2 z-50 animate-item-float"
+                        alt="Astronaut floating in space"
+                        className="absolute hidden md:block -bottom-50 -right-60 z-50 w-80 animate-item-float"
                         priority
                     />
-                    
-                    <h1 className={`${cinzel.className} md:text-7xl sm:text-5xl text-4xl`}>
+
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-card/30 backdrop-blur-sm text-sm">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        Available for new projects
+                    </div>
+
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
                         Zielis Gabriel
                     </h1>
+                    
+                    <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground">
+                        Full-Stack Developer
+                    </p>
 
-                    <h2 className={`${cinzel.className} md:text-2xl text-xl`}>
-                        Full-stack developer
-                    </h2>
-                </div>
+                    <p className="max-w-xl mx-auto text-muted-foreground leading-relaxed">
+                        Building modern and scalable web applications with focus on{" "}
+                        <span className="text-foreground font-medium">user experience</span>,{" "}
+                        <span className="text-foreground font-medium">performance</span> and{" "}
+                        <span className="text-foreground font-medium">clean code</span>.
+                    </p>
 
-                <ul className="flex gap-4 mt-2">
-                    <li>
+                    <div className="flex items-center justify-center gap-4 pt-2">
                         <Link
                             href="https://github.com/zielisgabriel"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className=" hover:cursor-none opacity-80"
+                            className="p-3 rounded-full border border-border/50 bg-card/50 hover:bg-card hover:border-foreground/30 transition-all cursor-none"
+                            aria-label="GitHub"
                         >
-                            <GitHubLogoIcon className="md:w-8 md:h-8 w-6 h-6" />
+                            <GitHubLogoIcon className="h-5 w-5" />
                         </Link>
-                    </li>
-                    <li>
                         <Link
                             href="https://www.linkedin.com/in/josgabrielalmeida/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className=" hover:cursor-none opacity-80"
+                            className="p-3 rounded-full border border-border/50 bg-card/50 hover:bg-card hover:border-foreground/30 transition-all cursor-none"
+                            aria-label="LinkedIn"
                         >
-                            <LinkedInLogoIcon className="md:w-8 md:h-8 w-6 h-6" />
+                            <LinkedInLogoIcon className="h-5 w-5" />
                         </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="https://www.instagram.com/zielis085/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className=" hover:cursor-none opacity-80"
-                        >
-                            <InstagramLogoIcon className="md:w-8 md:h-8 w-6 h-6" />
-                        </Link>
-                    </li>
-                </ul>
+                    </div>
 
-                <Link
-                    href="https://docs.google.com/document/d/1yMuvbtr0Nx3zqZJLSM_-SZwGLFiD2XCai85EcAqrv9M/edit?usp=sharing"
-                    title="Curriculum"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 md:mb-0 mb-60"
-                >
-                    <Button>
-                        <p className="flex items-center gap-1">
-                            View Curriculum
-                            <ExternalLinkIcon className="w-4 h-4" />
-                        </p>
-                    </Button>
-                </Link>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                        <Button size="lg" className="cursor-none" asChild>
+                            <Link 
+                                href="#projects"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+                                }}
+                            >
+                                View Projects
+                                <ArrowDown className="ml-2 h-4 w-4" />
+                            </Link>
+                        </Button>
+                        <Button variant="outline" size="lg" className="cursor-none" asChild>
+                            <Link 
+                                href="https://docs.google.com/document/d/1yMuvbtr0Nx3zqZJLSM_-SZwGLFiD2XCai85EcAqrv9M/edit?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Resume
+                                <ExternalLink className="ml-2 h-4 w-4" />
+                            </Link>
+                        </Button>
+                    </div>
+                </div>
+            </div>
+
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                <ArrowDown className="h-6 w-6 text-muted-foreground" />
             </div>
         </section>
     );
