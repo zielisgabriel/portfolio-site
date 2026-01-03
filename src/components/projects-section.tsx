@@ -1,15 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { Cinzel } from "next/font/google";
-import SpaceStation from "../../public/space-station.png";
 import { ProjectsList } from "./project-list";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
-const cinzel = Cinzel({
-    weight: ["400", "500", "600", "700"],
-    subsets: ["latin"],
-});
+import SpaceStation from "../../public/space-station.png";
 
 export function ProjectsSection() {
     const queryClient = new QueryClient({
@@ -24,21 +18,29 @@ export function ProjectsSection() {
     
     return (
         <QueryClientProvider client={queryClient}>
-            <section id="projects" className="flex flex-col relative md:py-12 py-8 pb-0 px-4 md:gap-8 gap-4 overflow-hidden">
-                <div className="absolute top-[60%] left-1/2 -z-10 brightness-90 animate-from-left-screen-to-right-screen -rotate-10">
-                <Image
-                    src={SpaceStation}
-                    alt="Space Station"
-                    className="rotate-6 w-sm"
-                    priority
-                />
+            <section id="projects" className="relative py-20 md:py-32 overflow-hidden">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 opacity-20">
+                    <Image
+                        src={SpaceStation}
+                        alt="Space Station"
+                        className="w-96 animate-item-float"
+                        priority
+                    />
                 </div>
 
-                <h1 className={`${cinzel.className} md:text-5xl text-4xl text-center`}>
-                    Projects
-                </h1>
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+                            Projects
+                        </h2>
+                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                            Some of the projects I've built, applying best practices and modern technologies.
+                        </p>
+                        <div className="w-20 h-1 bg-foreground mx-auto rounded-full mt-4" />
+                    </div>
 
-                <ProjectsList />
+                    <ProjectsList />
+                </div>
             </section>
         </QueryClientProvider>
     );
