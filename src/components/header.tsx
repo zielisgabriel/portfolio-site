@@ -2,14 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import { Menu, PaperclipIcon, X } from "lucide-react";
+import { ChevronRightIcon, HouseIcon, MenuIcon, PaperclipIcon, PresentationIcon, UserSearch } from "lucide-react";
 import Link from "next/link";
 import { scrollToById } from "@/utils/scroll-to-by-id";
+import { Sheet, SheetClose, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+import clsx from "clsx";
+import { Separator } from "./ui/separator";
 
 const navItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "projects", label: "Projects" },
+    { id: "home", label: "Home", icon: <HouseIcon /> },
+    { id: "about", label: "About", icon: <UserSearch /> },
+    { id: "projects", label: "Projects", icon: <PresentationIcon /> },
 ];
 
 export function Header() {
@@ -107,49 +110,99 @@ export function Header() {
                         </li>
                     </ul>
 
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        className="md:hidden cursor-none"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        aria-label="Toggle menu"
-                    >
-                        {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-                    </Button>
-                </div>
-
-                {isMobileMenuOpen && (
-                    <div className="md:hidden py-4 border-t border-border/50 bg-background/95 backdrop-blur-md animate-fade-in">
-                        <ul className="flex flex-col gap-2">
-                            {navItems.map((item) => (
-                                <li key={item.id}>
-                                    <Button
-                                        variant="ghost"
-                                        className={`cursor-none w-full justify-start font-medium uppercase tracking-widest text-xs ${
-                                            currentSection === item.id 
-                                                ? "text-foreground" 
-                                                : "text-muted-foreground"
-                                        }`}
-                                        onClick={() => scrollTo(item.id)}
-                                    >
-                                        {item.label}
-                                    </Button>
-                                </li>
-                            ))}
-                            <li className="mt-2">
-                                <Button className="w-full cursor-none" asChild>
-                                    <Link 
-                                        href="https://docs.google.com/document/d/1yMuvbtr0Nx3zqZJLSM_-SZwGLFiD2XCai85EcAqrv9M/edit?usp=sharing"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Resume
-                                    </Link>
+                    <div className="md:hidden">
+                        <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                            <SheetTrigger asChild>
+                                <Button
+                                    variant={"ghost"}
+                                    size={"icon"}
+                                    className="cursor-none"
+                                >
+                                    <MenuIcon className="h-5 w-5" />
                                 </Button>
-                            </li>
-                        </ul>
+                            </SheetTrigger>
+                            <SheetContent className="z-100 w-72">
+                                <SheetHeader className="pb-2">
+                                    <SheetTitle className="text-2xl font-bold">
+                                        Zielis<span className="text-primary">.</span>
+                                    </SheetTitle>
+                                </SheetHeader>
+
+                                <Separator />
+
+                                <nav className="flex flex-col gap-2 px-2">
+                                    {navItems.map(item => (
+                                        <SheetClose asChild key={item.id}>
+                                            <Button
+                                                onClick={() => scrollTo(item.id)}
+                                                variant={currentSection === item.id ? "secondary" : "ghost"}
+                                                className="w-full justify-between gap-3 h-12 text-base cursor-none"
+                                            >
+                                                <div className="flex items-center gap-2">
+                                                    <span className={clsx(
+                                                        "p-2 rounded-lg",
+                                                        currentSection === item.id 
+                                                            ? "bg-primary/20 text-primary" 
+                                                            : "bg-muted"
+                                                    )}>
+                                                        {item.icon}
+                                                    </span>
+                                                    <p>{item.label}</p>
+                                                </div>
+                                                <div className="w-20">
+                                                    {currentSection === item.id && (
+                                                        <ChevronRightIcon className="ml-auto h-4 w-4 text-primary" />
+                                                    )}
+                                                </div>
+                                            </Button>
+                                        </SheetClose>
+                                    ))}
+                                </nav>
+
+                                <Separator />
+
+                                <div className="px-4">
+                                    <SheetClose asChild>
+                                        <Button
+                                            asChild
+                                            variant={"outline"}
+                                            className="w-full cursor-none"
+                                        >
+                                            <Link 
+                                                href="https://docs.google.com/document/d/1yMuvbtr0Nx3zqZJLSM_-SZwGLFiD2XCai85EcAqrv9M/edit?usp=sharing"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <PaperclipIcon className="h-4 w-4" />
+                                                View Resume
+                                            </Link>
+                                        </Button>
+                                    </SheetClose>
+                                </div>
+
+                                <SheetFooter className="border-t border-border pt-4">
+                                    <p className="text-xs text-muted-foreground text-center">
+                                        Full-Stack Developer
+                                    </p>
+                                    <Button
+                                        asChild
+                                        variant={"outline"}
+                                        size={"sm"}
+                                        className="cursor-none"
+                                    >
+                                        <Link 
+                                            href={"https://www.youtube.com/@LilZielis"}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            🎵 My music channel
+                                        </Link>
+                                    </Button>
+                                </SheetFooter>
+                            </SheetContent>
+                        </Sheet>
                     </div>
-                )}
+                </div>
             </nav>
         </header>
     );
