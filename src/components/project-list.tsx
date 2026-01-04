@@ -14,7 +14,8 @@ import { ProjectResponse } from "@/@types/project-response";
 import { Pagination } from "./pagination";
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export function ProjectsList() {
     const [page, setPage] = useState<number>(1);
@@ -143,7 +144,7 @@ export function ProjectsList() {
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                         >
-                                                            <Github className="mr-2 h-4 w-4" />
+                                                            <GitHubLogoIcon className="mr-2 h-4 w-4" />
                                                             {repository.type} Repository
                                                         </Link>
                                                     </Button>
