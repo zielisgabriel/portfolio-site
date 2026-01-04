@@ -29,7 +29,7 @@ export function Pagination({
       </Button>
 
       <span className="text-sm opacity-80">
-        Página {page} de {totalPages}
+        Page {page} of {totalPages}
       </span>
 
       <Button
