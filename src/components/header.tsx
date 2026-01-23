@@ -2,27 +2,27 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import { ChevronRightIcon, HouseIcon, MenuIcon, PaperclipIcon, PresentationIcon, UserSearch } from "lucide-react";
+import { GlobeIcon, HouseIcon, PaperclipIcon, PresentationIcon, UserSearch } from "lucide-react";
 import Link from "next/link";
 import { scrollToById } from "@/utils/scroll-to-by-id";
-import { Sheet, SheetClose, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
-import clsx from "clsx";
-import { Separator } from "./ui/separator";
+import { MobileHeader } from "./mobile-header";
+import { useParams } from "next/navigation";
 
-const navItems = [
-    { id: "home", label: "Home", icon: <HouseIcon /> },
-    { id: "about", label: "About", icon: <UserSearch /> },
-    { id: "projects", label: "Projects", icon: <PresentationIcon /> },
-];
+type HeaderProps = {
+    dict: any
+}
 
-export function Header() {
+export function Header({ dict }: HeaderProps) {
     const [currentSection, setCurrentSection] = useState<string>("home");
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+    const params = useParams();
+    const currentLocale = params.lang as string;
 
-    function scrollTo(id: string) {
-        scrollToById(id, () => setIsMobileMenuOpen(false));
-    }
+    const navItems = [
+        { id: "home", label: dict.header.home, icon: <HouseIcon /> },
+        { id: "about", label: dict.header.about, icon: <UserSearch /> },
+        { id: "projects", label: dict.header.projects, icon: <PresentationIcon /> },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -68,7 +68,7 @@ export function Header() {
                 <div className="flex items-center justify-between h-16 md:h-20">
                     <Button
                         variant={"ghost"}
-                        onClick={() => { scrollTo("home"); }}
+                        onClick={() => { scrollToById("home"); }}
                         className="font-bold text-xl tracking-tight hover:text-primary transition-colors cursor-none"
                     >
                         Zielis.
@@ -80,7 +80,7 @@ export function Header() {
                                 <Button
                                     variant="ghost"
                                     size="sm"
-                                    onClick={() => scrollTo(item.id)}
+                                    onClick={() => scrollToById(item.id)}
                                     className={`cursor-none font-medium uppercase tracking-widest text-xs transition-colors ${
                                         currentSection === item.id 
                                             ? "text-foreground border-b-2 border-foreground rounded-b-none" 
@@ -91,7 +91,22 @@ export function Header() {
                                 </Button>
                             </li>
                         ))}
-                        <li className="ml-4">
+                        <li className="ml-2">
+                            <Button
+                                size="sm"
+                                variant="ghost"
+                                className="cursor-none gap-1.5 text-muted-foreground hover:text-foreground"
+                                asChild
+                            >
+                                <Link href={currentLocale === "pt" ? "/en" : "/pt"}>
+                                    <GlobeIcon className="h-4 w-4" />
+                                    <span className="font-medium text-xs uppercase tracking-wider">
+                                        {currentLocale === "pt" ? "EN" : "PT"}
+                                    </span>
+                                </Link>
+                            </Button>
+                        </li>
+                        <li className="ml-2">
                             <Button
                                 size="sm"
                                 variant={"outline"}
@@ -104,104 +119,18 @@ export function Header() {
                                     rel="noopener noreferrer"
                                 >
                                     <PaperclipIcon />
-                                    Resume
+                                    {dict.header.resume}
                                 </Link>
                             </Button>
                         </li>
                     </ul>
 
-                    <div className="md:hidden">
-                        <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-                            <SheetTrigger asChild>
-                                <Button
-                                    variant={"ghost"}
-                                    size={"icon"}
-                                    className="cursor-none"
-                                >
-                                    <MenuIcon className="h-5 w-5" />
-                                </Button>
-                            </SheetTrigger>
-                            <SheetContent className="z-100 w-72">
-                                <SheetHeader className="pb-2">
-                                    <SheetTitle className="text-2xl font-bold">
-                                        Zielis<span className="text-primary">.</span>
-                                    </SheetTitle>
-                                </SheetHeader>
-
-                                <Separator />
-
-                                <nav className="flex flex-col gap-2 px-2">
-                                    {navItems.map(item => (
-                                        <SheetClose asChild key={item.id}>
-                                            <Button
-                                                onClick={() => scrollTo(item.id)}
-                                                variant={currentSection === item.id ? "secondary" : "ghost"}
-                                                className="w-full justify-between gap-3 h-12 text-base cursor-none"
-                                            >
-                                                <div className="flex items-center gap-2">
-                                                    <span className={clsx(
-                                                        "p-2 rounded-lg",
-                                                        currentSection === item.id 
-                                                            ? "bg-primary/20 text-primary" 
-                                                            : "bg-muted"
-                                                    )}>
-                                                        {item.icon}
-                                                    </span>
-                                                    <p>{item.label}</p>
-                                                </div>
-                                                <div className="w-20">
-                                                    {currentSection === item.id && (
-                                                        <ChevronRightIcon className="ml-auto h-4 w-4 text-primary" />
-                                                    )}
-                                                </div>
-                                            </Button>
-                                        </SheetClose>
-                                    ))}
-                                </nav>
-
-                                <Separator />
-
-                                <div className="px-4">
-                                    <SheetClose asChild>
-                                        <Button
-                                            asChild
-                                            variant={"outline"}
-                                            className="w-full cursor-none"
-                                        >
-                                            <Link 
-                                                href="https://docs.google.com/document/d/1yMuvbtr0Nx3zqZJLSM_-SZwGLFiD2XCai85EcAqrv9M/edit?usp=sharing"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                <PaperclipIcon className="h-4 w-4" />
-                                                View Resume
-                                            </Link>
-                                        </Button>
-                                    </SheetClose>
-                                </div>
-
-                                <SheetFooter className="border-t border-border pt-4">
-                                    <p className="text-xs text-muted-foreground text-center">
-                                        Full-Stack Developer
-                                    </p>
-                                    <Button
-                                        asChild
-                                        variant={"outline"}
-                                        size={"sm"}
-                                        className="cursor-none"
-                                    >
-                                        <Link 
-                                            href={"https://www.youtube.com/@LilZielis"}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            🎵 My music channel
-                                        </Link>
-                                    </Button>
-                                </SheetFooter>
-                            </SheetContent>
-                        </Sheet>
-                    </div>
+                    <MobileHeader
+                        currentSection={currentSection}
+                        dict={dict}
+                        navItems={navItems}
+                        currentLocale={currentLocale}
+                    />
                 </div>
             </nav>
         </header>
