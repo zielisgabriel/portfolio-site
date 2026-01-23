@@ -1,0 +1,54 @@
+{
+  "all": {
+    "stack": "Desenvolvedor Full-Stack",
+    "view_resume": "Visualizar Currículo"
+  },
+  "header": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "resume": "Currículo",
+    "my_music_channel": "Meu canal de músicas",
+    "language": "Linguagem"
+  },
+  "home": {
+    "available": "Disponível para novos projetos",
+    "description": [
+      "Construindo aplicações web modernas e escaláveis com foco em",
+      "experiência de usuário",
+      "desempenho",
+      "e",
+      "código limpo"
+    ],
+    "view_projects": "Visualizar Projetos"
+  },
+  "about_me": {
+    "title": "Sobre mim",
+    "who_i_am": {
+      "title": "Quem sou eu",
+      "description": [
+        "Olá! sou",
+        "mas pode me chamar de",
+        "Sou estudante de programação e atualmente estou cursando uma graduação em Análise e Desenvolvimento de Sistemas.",
+        "Como desenvolvedor full-stack, tenho experiência prática na criação de projetos pessoais com tecnologias como",
+        "e",
+        "onde aplico os princípios SOLID e Domain-Driven Design (DDD) para entregar código escalável e de fácil manutenção.",
+        "Além do desenvolvimento de backend e frontend, possuo habilidades em implantação de aplicações em ambientes de nuvem",
+        "implementando pipelines CI/CD e conteinerizando com"
+      ]
+    },
+    "skills": {
+      "title": "Habilidades",
+      "languages": "Linguagens",
+      "databases": "Banco de dados",
+      "infrastructure": "Infraestrutura"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "description": "Alguns dos projetos que desenvolvi, aplicando as melhores práticas e tecnologias modernas."
+  },
+  "footer": {
+    "copyright": "Todos os direitos reservados."
+  }
+}
