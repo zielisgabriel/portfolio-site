@@ -3,9 +3,14 @@ import { Badge } from "./ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import SpaceStation from "../../public/space-station.png";
 
-const skills = [
+type AboutSectionProps = {
+    dict: any
+}
+
+export function AboutSection({ dict }: AboutSectionProps) {
+    const skills = [
     {
-        category: "Languages",
+        category: dict.about_me.skills.languages,
         items: ["Java", "TypeScript", "JavaScript"]
     },
     {
@@ -17,22 +22,21 @@ const skills = [
         items: ["Next.js", "React.js", "TailwindCSS", "shadcn/ui"]
     },
     {
-        category: "Databases",
+        category: dict.about_me.skills.databases,
         items: ["PostgreSQL", "MySQL", "MongoDB", "SQLite"]
     },
     {
-        category: "Infrastructure",
+        category: dict.about_me.skills.infrastructure,
         items: ["AWS", "Docker", "CI/CD", "Linux"]
     }
 ];
 
-export function AboutSection() {
     return (
         <section id="about" className="py-20 md:py-32">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-                        About Me
+                        {dict.about_me.title}
                     </h2>
                     <div className="w-20 h-1 bg-foreground mx-auto rounded-full" />
                 </div>
@@ -41,24 +45,23 @@ export function AboutSection() {
                     <div className="space-y-6">
                         <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
                             <CardHeader>
-                                <CardTitle className="text-2xl">Who I am</CardTitle>
+                                <CardTitle className="text-2xl">
+                                    {dict.about_me.who_i_am.title}
+                                </CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-4 text-muted-foreground leading-relaxed">
                                 <p>
-                                    Hello! I'm <span className="text-foreground font-semibold">José Gabriel</span>, 
-                                    but you can call me <span className="text-foreground font-semibold">Zielis</span>. 
-                                    I'm a programming student currently pursuing a degree in Systems Analysis and Development.
+                                    {dict.about_me.who_i_am.description[0]} <span className="text-foreground font-semibold">José Gabriel</span>, 
+                                    {" " + dict.about_me.who_i_am.description[1]} <span className="text-foreground font-semibold">Zielis</span>. 
+                                    {" " + dict.about_me.who_i_am.description[2]}
                                 </p>
                                 <p>
-                                    As a full-stack developer, I have hands-on experience building personal projects 
-                                    with technologies like <span className="text-foreground font-medium">Next.js</span> and{" "}
-                                    <span className="text-foreground font-medium">Spring Framework</span>, where I apply 
-                                    SOLID and Domain-Driven Design (DDD) principles to deliver maintainable and scalable code.
+                                    {dict.about_me.who_i_am.description[3] + " "}<span className="text-foreground   font-medium">Next.js</span> {dict.about_me.who_i_am.description[4] + " "}
+                                    <span className="text-foreground font-medium">Spring Framework</span>, {dict.about_me.who_i_am.description[5]}
                                 </p>
                                 <p>
-                                    Beyond backend and frontend development, I have skills in deploying applications 
-                                    to cloud environments using <span className="text-foreground font-medium">AWS</span>, 
-                                    implementing CI/CD pipelines and containerization with{" "}
+                                    {dict.about_me.who_i_am.description[6] + " "}<span className="text-foreground font-medium">AWS</span>, 
+                                    {" " + dict.about_me.who_i_am.description[7] + " "}
                                     <span className="text-foreground font-medium">Docker</span>.
                                 </p>
                             </CardContent>
@@ -66,7 +69,7 @@ export function AboutSection() {
 
                         <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
                             <CardHeader>
-                                <CardTitle className="text-2xl">Skills</CardTitle>
+                                <CardTitle className="text-2xl">{dict.about_me.skills.title}</CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-4">
                                 {skills.map((skill) => (
