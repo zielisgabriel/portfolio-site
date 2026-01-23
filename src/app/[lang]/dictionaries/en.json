@@ -1,0 +1,54 @@
+{
+  "all": {
+    "stack": "Full-Stack Developer",
+    "view_resume": "View Resume"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "resume": "Resume",
+    "my_music_channel": "My music channel",
+    "language": "Language"
+  },
+  "home": {
+    "available": "Available for new projects",
+    "description": [
+      "Building modern and scalable web applications with focus on",
+      "user experience",
+      "performance",
+      "and",
+      "clean code"
+    ],
+    "view_projects": "View Projects"
+  },
+  "about_me": {
+    "title": "About me",
+    "who_i_am": {
+      "title": "Who I am",
+      "description": [
+        "Hello! I'm",
+        "but you can call me",
+        "I'm a programming student currently pursuing a degree in Systems Analysis and Development.",
+        "As a full-stack developer, I have hands-on experience building personal projects with technologies like",
+        "and",
+        "where I apply SOLID and Domain-Driven Design (DDD) principles to deliver maintainable and scalable code.",
+        "Beyond backend and frontend development, I have skills in deploying applications to cloud environments using",
+        "implementing CI/CD pipelines and containerization with"
+      ]
+    },
+    "skills": {
+      "title": "Skills",
+      "languages": "Languages",
+      "databases": "Databases",
+      "infrastructure": "Infrastructure"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Some of the projects I've built, applying best practices and modern technologies."
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  }
+}
