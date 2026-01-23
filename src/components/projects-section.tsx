@@ -5,7 +5,11 @@ import { ProjectsList } from "./project-list";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SpaceStation from "../../public/space-station.png";
 
-export function ProjectsSection() {
+type ProjectsSectionProps = {
+    dict: any
+}
+
+export function ProjectsSection({ dict }: ProjectsSectionProps) {
     const queryClient = new QueryClient({
         defaultOptions: {
             queries: {
@@ -31,10 +35,10 @@ export function ProjectsSection() {
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-                            Projects
+                            {dict.projects.title}
                         </h2>
                         <p className="text-muted-foreground max-w-2xl mx-auto">
-                            Some of the projects I've built, applying best practices and modern technologies.
+                            {dict.projects.description}
                         </p>
                         <div className="w-20 h-1 bg-foreground mx-auto rounded-full mt-4" />
                     </div>
