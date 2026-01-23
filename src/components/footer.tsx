@@ -3,7 +3,11 @@ import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { HomeButton } from "./home-button";
 import { Button } from "./ui/button";
 
-export function Footer() {
+type FooterProps = {
+    dict: any
+}
+
+export function Footer({ dict }: FooterProps) {
     const currentYear = new Date().getFullYear();
     
     return (
@@ -13,7 +17,7 @@ export function Footer() {
                     <div className="text-center md:text-left">
                         <HomeButton />
                         <p className="text-sm text-muted-foreground mt-1">
-                            © {currentYear} Zielis Gabriel. All rights reserved.
+                            © {currentYear} Zielis Gabriel. {dict.footer.copyright}
                         </p>
                     </div>
 
