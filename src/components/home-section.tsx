@@ -6,8 +6,13 @@ import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
 import { ArrowDown, ExternalLink } from "lucide-react";
 import Astronaut1 from "../../public/astronaut1.png";
+import { getDictionary } from "@/app/[lang]/dictionaries";
 
-export function HomeSection() {
+type HomeSectionProps = {
+    dict: any
+}
+
+export function HomeSection({ dict }: HomeSectionProps) {
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center animate-fade-in">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -24,7 +29,7 @@ export function HomeSection() {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                         </span>
-                        Available for new projects
+                        {dict.home.available}
                     </div>
 
                     <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
@@ -32,14 +37,14 @@ export function HomeSection() {
                     </h1>
                     
                     <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground">
-                        Full-Stack Developer
+                        {dict.all.stack}
                     </p>
 
                     <p className="max-w-xl mx-auto text-muted-foreground leading-relaxed">
-                        Building modern and scalable web applications with focus on{" "}
-                        <span className="text-foreground font-medium">user experience</span>,{" "}
-                        <span className="text-foreground font-medium">performance</span> and{" "}
-                        <span className="text-foreground font-medium">clean code</span>.
+                        {dict.home.description[0] + " "}
+                        <span className="text-foreground font-medium">{dict.home.description[1]}</span>,{" "}
+                        <span className="text-foreground font-medium">{dict.home.description[2]}</span> {dict.home.description[3] + " "}
+                        <span className="text-foreground font-medium">{dict.home.description[4]}</span>.
                     </p>
 
                     <div className="flex items-center justify-center gap-4 pt-2">
@@ -64,17 +69,16 @@ export function HomeSection() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                        <Button size="lg" className="cursor-none" asChild>
-                            <Link 
-                                href="#projects"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-                                }}
-                            >
-                                View Projects
-                                <ArrowDown className="h-4 w-4" />
-                            </Link>
+                        <Button 
+                            size="lg"
+                            className="cursor-none"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+                            }}
+                        >
+                            {dict.home.view_projects}
+                            <ArrowDown className="h-4 w-4" />
                         </Button>
                         <Button variant="outline" size="lg" className="cursor-none" asChild>
                             <Link 
@@ -82,7 +86,7 @@ export function HomeSection() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                View Resume
+                                {dict.all.view_resume}
                                 <ExternalLink className="h-4 w-4" />
                             </Link>
                         </Button>
