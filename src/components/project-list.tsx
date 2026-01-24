@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { ExternalLink } from "lucide-react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { Spinner } from "./ui/spinner";
 
 export function ProjectsList() {
     const [page, setPage] = useState<number>(1);
@@ -40,8 +41,8 @@ export function ProjectsList() {
 
     if (isLoading) {
         return (
-            <div className="flex items-center justify-center py-20">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-foreground"></div>
+            <div className="flex items-center justify-center py-12">
+                <Spinner className="size-6" />
             </div>
         );
     }
@@ -55,8 +56,8 @@ export function ProjectsList() {
             />
 
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {projectsResponse?.projects.map((project) => (
-                    <Dialog key={project.id}>
+                {projectsResponse?.projects.map((project, index: number) => (
+                    <Dialog key={index}>
                         <DialogTrigger asChild>
                             <Card className="group cursor-none hover:border-foreground/30 transition-all duration-300 overflow-hidden bg-card/50 backdrop-blur-sm border-border/50">
                                 <CardHeader className="pb-4">
@@ -128,7 +129,7 @@ export function ProjectsList() {
 
                                         <div className="flex flex-wrap gap-2">
                                             {project.projectTechnologies?.map((tech, i) => (
-                                                <Badge key={i} variant="secondary">
+                                                <Badge key={tech.id} variant="secondary">
                                                     {tech.technology.name}
                                                 </Badge>
                                             ))}

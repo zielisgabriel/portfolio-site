@@ -1,16 +1,15 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { cacheTag } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 
 export async function getProjectsService(page: number) {
   "use cache";
 
   page = --page;
 
-  console.log("getProjectsService | Page: ", page);
-
   cacheTag("projects");
+  cacheLife("weeks");
 
   const projectsPerPage = 4;
 
