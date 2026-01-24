@@ -1,7 +1,7 @@
 "use server";
 
+import { prisma } from "@/lib/prisma";
 import { cacheTag } from "next/cache";
-import { prisma } from "../../db";
 
 export async function getProjectsService(page: number) {
   "use cache";
