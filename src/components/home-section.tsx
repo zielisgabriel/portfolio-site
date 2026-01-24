@@ -6,7 +6,6 @@ import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
 import { ArrowDown, ExternalLink } from "lucide-react";
 import Astronaut1 from "../../public/astronaut1.png";
-import { getDictionary } from "@/app/[lang]/dictionaries";
 
 type HomeSectionProps = {
     dict: any
