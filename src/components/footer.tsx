@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { HomeButton } from "./home-button";
@@ -8,8 +10,6 @@ type FooterProps = {
 }
 
 export function Footer({ dict }: FooterProps) {
-    const currentYear = new Date().getFullYear();
-    
     return (
         <footer className="border-t border-border/50 bg-background/50 backdrop-blur-sm">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -17,7 +17,7 @@ export function Footer({ dict }: FooterProps) {
                     <div className="text-center md:text-left">
                         <HomeButton />
                         <p className="text-sm text-muted-foreground mt-1">
-                            © {currentYear} Zielis Gabriel. {dict.footer.copyright}
+                            © 2026 Zielis Gabriel. {dict.footer.copyright}
                         </p>
                     </div>
 
