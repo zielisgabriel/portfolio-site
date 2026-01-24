@@ -6,6 +6,7 @@ import { AboutSection } from "@/components/about-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Zielis Gabriel | Portfolio",
