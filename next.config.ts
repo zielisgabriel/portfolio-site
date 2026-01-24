@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   devIndicators: false,
+  cacheComponents: true,
   images: {
     remotePatterns: [
       {
@@ -17,7 +17,8 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "zielis-gabriel-portfolio-projects-images.s3.us-east-1.amazonaws.com",
       }
-    ]
+    ],
+    qualities: [75, 90]
   }
 };
 
