@@ -10,7 +10,6 @@ import { ScrollArea } from "./ui/scroll-area";
 import { Badge } from "./ui/badge";
 import { getProjectsService } from "@/services/get-projects-service";
 import { keepPreviousData, useQuery, useQueryClient } from "@tanstack/react-query";
-import { ProjectResponse } from "@/@types/project-response";
 import { Pagination } from "./pagination";
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
@@ -24,7 +23,7 @@ export function ProjectsList() {
     const {
         data: projectsResponse,
         isLoading
-    } = useQuery<ProjectResponse>({
+    } = useQuery({
         queryKey: ["projects", page],
         queryFn: () => getProjectsService(page),
         placeholderData: keepPreviousData
@@ -56,8 +55,8 @@ export function ProjectsList() {
             />
 
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {projectsResponse?.projects.map((project, index: number) => (
-                    <Dialog key={index}>
+                {projectsResponse?.projects.map((project) => (
+                    <Dialog key={project.id}>
                         <DialogTrigger asChild>
                             <Card className="group cursor-none hover:border-foreground/30 transition-all duration-300 overflow-hidden bg-card/50 backdrop-blur-sm border-border/50">
                                 <CardHeader className="pb-4">
@@ -85,14 +84,14 @@ export function ProjectsList() {
                                 
                                 <CardFooter>
                                     <div className="flex flex-wrap gap-2">
-                                        {project.technologies?.slice(0, 4).map((tech, i) => (
+                                        {project.projectTechnologies?.slice(0, 4).map((tech, i) => (
                                             <Badge key={i} variant="secondary" className="text-xs">
-                                                {tech}
+                                                {tech.technology.name}
                                             </Badge>
                                         ))}
-                                        {project.technologies && project.technologies.length > 4 && (
+                                        {project.projectTechnologies && project.projectTechnologies.length > 4 && (
                                             <Badge variant="outline" className="text-xs">
-                                                +{project.technologies.length - 4}
+                                                +{project.projectTechnologies.length - 4}
                                             </Badge>
                                         )}
                                     </div>
@@ -128,33 +127,31 @@ export function ProjectsList() {
                                         </div>
 
                                         <div className="flex flex-wrap gap-2">
-                                            {project.technologies?.map((tech, i) => (
+                                            {project.projectTechnologies?.map((tech, i) => (
                                                 <Badge key={i} variant="secondary">
-                                                    {tech}
+                                                    {tech.technology.name}
                                                 </Badge>
                                             ))}
                                         </div>
 
                                         <div className="flex flex-col gap-3 pt-4">
-                                            {Array.isArray(project.repositories) && project.repositories.length > 0 && (
-                                                project.repositories.map((repository, i) => (
-                                                    <Button key={i} variant="outline" className="w-full justify-start cursor-none" asChild>
-                                                        <Link
-                                                            href={repository.url}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                        >
-                                                            <GitHubLogoIcon className="mr-2 h-4 w-4" />
-                                                            {repository.type} Repository
-                                                        </Link>
-                                                    </Button>
-                                                ))
+                                            {project.repositoryUrl && (
+                                                <Button variant="outline" className="w-full justify-start cursor-none" asChild>
+                                                    <Link
+                                                        href={project.repositoryUrl}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        <GitHubLogoIcon className="mr-2 h-4 w-4" />
+                                                        Repository
+                                                    </Link>
+                                                </Button>
                                             )}
 
-                                            {project.websiteUrl && (
+                                            {project.projectUrl && (
                                                 <Button className="w-full justify-start cursor-none" asChild>
                                                     <Link
-                                                        href={project.websiteUrl}
+                                                        href={project.projectUrl}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                     >
