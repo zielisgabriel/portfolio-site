@@ -2,8 +2,12 @@
 
 import { ProjectResponse } from "@/@types/project-response";
 import projects from "@/database/tables/projects.json";
+import { cacheTag } from "next/cache";
 
 export async function getProjectsService(page: number): Promise<ProjectResponse> {
+  "use cache";
+  cacheTag("projects");
+
   const projectsPerPage = 4;
 
   const startIndex = (page - 1) * projectsPerPage;
