@@ -18,12 +18,16 @@ model Project {
   repositoryUrl       String?
   projectUrl          String?
   projectTechnologies ProjectTechnologies[]
+
+  @@map("projects")
 }
 
 model Technology {
   id                  Int                   @id @default(autoincrement())
   name                String                @unique
   projectTechnologies ProjectTechnologies[]
+
+  @@map("technologies")
 }
 
 model ProjectTechnologies {
@@ -34,4 +38,5 @@ model ProjectTechnologies {
   projectId    Int
 
   @@unique([projectId, technologyId])
+  @@map("project_technologies")
 }
