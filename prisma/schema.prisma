@@ -10,9 +10,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "postgresql",
+  url  	   = env("DATABASE_URL")
 }
-
 
 model Project {
   id                  Int                   @id @default(autoincrement())
