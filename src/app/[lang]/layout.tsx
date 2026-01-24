@@ -1,11 +1,12 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ProgressBarScroll } from "@/components/progress-bar-scroll";
-import { ReactLenis } from "lenis/react";
 import { CustomCursor } from "@/components/custom-cursor";
 import "@/css/globals.css";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
+import { GlobalLoading } from "@/components/global-loading";
 
 export async function generateStaticParams() {
   return [{ lang: 'pt' }, { lang: 'en' }];
@@ -31,18 +32,20 @@ export default async function RootLayout({
       </head>
 
       <body className="antialiased dark">
-        <Header dict={dict} />
-        <ProgressBarScroll />
-        <CustomCursor />
-        <ReactLenis
-          root={true}
-          options={{
-            duration: 2,
-            wheelMultiplier: 3
-          }}
-        />
-        {children}
-        <Footer dict={dict} />
+        <Suspense fallback={<GlobalLoading />}>
+          <Header dict={dict} locale={lang} />
+          <ProgressBarScroll />
+          <CustomCursor />
+          {/* <ReactLenis
+            root={true}
+            options={{
+              duration: 2,
+              wheelMultiplier: 3
+            }}
+          /> */}
+          {children}
+          <Footer dict={dict} />
+        </Suspense>
       </body>
     </html>
   );
