@@ -1,8 +1,8 @@
-import { getLastApodNasa } from "@/services/get-last-apod-nasa";
+import { getLastApodNasaService } from "@/services/get-last-apod-nasa-service";
 
 export async function GET() {
     try {
-        const data = await getLastApodNasa();
+        const data = await getLastApodNasaService();
         const transformed = { ...data, source: 'proxied-through-nextjs' };
 
         return new Response(JSON.stringify(transformed), {
