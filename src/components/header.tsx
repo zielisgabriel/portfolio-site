@@ -6,17 +6,15 @@ import { GlobeIcon, HouseIcon, PaperclipIcon, PresentationIcon, UserSearch } fro
 import Link from "next/link";
 import { scrollToById } from "@/utils/scroll-to-by-id";
 import { MobileHeader } from "./mobile-header";
-import { useParams } from "next/navigation";
 
 type HeaderProps = {
-    dict: any
+    dict: any;
+    locale: string;
 }
 
-export function Header({ dict }: HeaderProps) {
+export function Header({ dict, locale }: HeaderProps) {
     const [currentSection, setCurrentSection] = useState<string>("home");
     const [isScrolled, setIsScrolled] = useState(false);
-    const params = useParams();
-    const currentLocale = params.lang as string;
 
     const navItems = [
         { id: "home", label: dict.header.home, icon: <HouseIcon /> },
@@ -98,10 +96,10 @@ export function Header({ dict }: HeaderProps) {
                                 className="cursor-none gap-1.5 text-muted-foreground hover:text-foreground"
                                 asChild
                             >
-                                <Link href={currentLocale === "pt" ? "/en" : "/pt"}>
+                                <Link href={locale === "pt" ? "/en" : "/pt"}>
                                     <GlobeIcon className="h-4 w-4" />
                                     <span className="font-medium text-xs uppercase tracking-wider">
-                                        {currentLocale === "pt" ? "EN" : "PT"}
+                                        {locale === "pt" ? "EN" : "PT"}
                                     </span>
                                 </Link>
                             </Button>
@@ -129,7 +127,7 @@ export function Header({ dict }: HeaderProps) {
                         currentSection={currentSection}
                         dict={dict}
                         navItems={navItems}
-                        currentLocale={currentLocale}
+                        currentLocale={locale}
                     />
                 </div>
             </nav>
