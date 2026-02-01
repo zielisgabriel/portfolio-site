@@ -3,31 +3,46 @@
 import { prisma } from "@/lib/prisma";
 import { cacheLife, cacheTag } from "next/cache";
 
-export async function getProjectsService(page: number) {
+export async function getProjectsService(
+  page: number,
+  technologyIds?: number[]
+) {
   "use cache";
 
-  page = --page;
+  const pageIndex = page - 1;
+  const projectsPerPage = 4;
 
   cacheTag("projects");
   cacheLife("weeks");
 
-  const projectsPerPage = 4;
-
-  const projects = await prisma.project.findMany({
-    include: {
-      projectTechnologies: {
-        include: { project: true, technology: true }
+  const whereClause = technologyIds?.length
+    ? {
+        projectTechnologies: {
+          some: {
+            technologyId: { in: technologyIds }
+          }
+        }
       }
-    },
-    skip: (page * projectsPerPage),
-    take: projectsPerPage
-  });
+    : {};
 
-  const totalProjects = projects.length;
+  const [projects, totalProjects] = await Promise.all([
+    prisma.project.findMany({
+      where: whereClause,
+      include: {
+        projectTechnologies: {
+          include: { technology: true }
+        }
+      },
+      skip: pageIndex * projectsPerPage,
+      take: projectsPerPage
+    }),
+    prisma.project.count({ where: whereClause })
+  ]);
+
   const totalPages = Math.ceil(totalProjects / projectsPerPage);
 
   return {
-    projects: projects,
+    projects,
     totalProjects,
     totalPages
   };
