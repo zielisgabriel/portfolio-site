@@ -13,10 +13,7 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.8.0",
-    "@hookform/resolvers": "^5.0.1",
-    "@prisma/adapter-better-sqlite3": "^7.3.0",
     "@prisma/adapter-neon": "^7.3.0",
-    "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-icons": "^1.3.2",
@@ -28,7 +25,6 @@
     "@tsparticles/slim": "^3.8.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lenis": "^1.3.4",
     "lucide-react": "^0.540.0",
     "motion": "^12.6.3",
     "negotiator": "^1.0.0",
@@ -37,16 +33,13 @@
     "radix-ui": "^1.4.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-hook-form": "^7.55.0",
-    "tailwind-merge": "^3.4.0",
-    "zod": "^3.24.2"
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/better-sqlite3": "^7.6.13",
     "@types/negotiator": "^0.6.4",
     "@types/node": "^25.0.10",
-    "@types/pg": "^8.16.0",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "dotenv": "^17.2.3",
