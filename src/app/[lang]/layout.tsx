@@ -12,7 +12,7 @@ export async function generateStaticParams() {
   return [{ lang: 'pt' }, { lang: 'en' }];
 }
 
-export default async function RootLayout({
+export default async function LangLayout({
   children,
   params
 }: Readonly<{
@@ -36,13 +36,6 @@ export default async function RootLayout({
           <Header dict={dict} locale={lang} />
           <ProgressBarScroll />
           <CustomCursor />
-          {/* <ReactLenis
-            root={true}
-            options={{
-              duration: 2,
-              wheelMultiplier: 3
-            }}
-          /> */}
           {children}
           <Footer dict={dict} />
         </Suspense>
