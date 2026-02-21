@@ -18,7 +18,7 @@ export function ParticlesBackground() {
 
     const options: ISourceOptions = useMemo(
         () => ({
-          fpsLimit: 60,
+          fpsLimit: 45,
           interactivity: {
             events: {
               onHover: {
@@ -43,10 +43,6 @@ export function ParticlesBackground() {
               enable: false,
               opacity: 0.3,
               width: 1,
-              triangles: {
-                enable: true,
-                opacity: 0.02,
-              }
             },
             move: {
               direction: MoveDirection.none,
@@ -55,7 +51,7 @@ export function ParticlesBackground() {
                 default: OutMode.out,
               },
               random: false,
-              speed: 0.2,
+              speed: 0.05,
               straight: false,
             },
             number: {
