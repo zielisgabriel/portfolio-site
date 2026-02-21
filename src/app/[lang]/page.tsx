@@ -6,7 +6,6 @@ import { AboutSection } from "@/components/about-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
-import { Meteors } from "@/components/ui/meteors";
 
 export const metadata: Metadata = {
   title: "Zielis Gabriel | Portfolio",
@@ -28,7 +27,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   return (
     <main className="overflow-x-hidden">
       <ParticlesBackground />
-      <Meteors />
       <HomeSection dict={dict} />
       <AboutSection dict={dict} />
       <section>
