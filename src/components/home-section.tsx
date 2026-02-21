@@ -29,7 +29,7 @@ export function HomeSection({ dict }: HomeSectionProps) {
                         {dict.home.available}
                     </div>
 
-                    <h1 className={`${geist.className} text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tight`}>
+                    <h1 className={`${geist.className} flex lg:flex-col flex-row gap-2 justify-center text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tight`}>
                         Zielis
                         <AuroraText
                             colors={["#ffffff", "#bfbfbf"]}
