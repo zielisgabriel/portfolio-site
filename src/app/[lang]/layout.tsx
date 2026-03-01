@@ -36,9 +36,9 @@ export default async function LangLayout({
           {/* <CustomCursor /> */}
           <SmoothCursor
             springConfig={{
-              mass: 1,
-              stiffness: 5000,
-              damping: 400,
+              mass: 0.5,
+              stiffness: 15000,
+              damping: 200,
               restDelta: 0
             }}
           />
