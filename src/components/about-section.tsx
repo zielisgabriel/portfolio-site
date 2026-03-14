@@ -34,7 +34,10 @@ export function AboutSection({ dict }: AboutSectionProps) {
     return (
         <section id="about" className="py-20 md:py-32">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
+                <div className="text-center mb-16 space-y-4">
+                    <Badge variant="outline" className="px-4 py-1 text-xs uppercase tracking-[0.2em]">
+                        {dict.header.about}
+                    </Badge>
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
                         {dict.about_me.title}
                     </h2>
@@ -43,13 +46,13 @@ export function AboutSection({ dict }: AboutSectionProps) {
 
                 <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-start">
                     <div className="space-y-6">
-                        <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+                        <Card className="border-border/60 bg-card/50 backdrop-blur-sm rounded-2xl">
                             <CardHeader>
                                 <CardTitle className="text-2xl">
                                     {dict.about_me.who_i_am.title}
                                 </CardTitle>
                             </CardHeader>
-                            <CardContent className="space-y-4 text-muted-foreground leading-relaxed">
+                            <CardContent className="space-y-4 text-muted-foreground leading-relaxed text-pretty">
                                 <p>
                                     {dict.about_me.who_i_am.description[0]} <span className="text-foreground font-semibold">José Gabriel</span>, 
                                     {" " + dict.about_me.who_i_am.description[1]} <span className="text-foreground font-semibold">Zielis</span>. 
@@ -67,19 +70,19 @@ export function AboutSection({ dict }: AboutSectionProps) {
                             </CardContent>
                         </Card>
 
-                        <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+                        <Card className="border-border/60 bg-card/50 backdrop-blur-sm rounded-2xl">
                             <CardHeader>
                                 <CardTitle className="text-2xl">{dict.about_me.skills.title}</CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-4">
                                 {skills.map((skill) => (
-                                    <div key={skill.category}>
-                                        <h3 className="text-sm font-medium text-muted-foreground mb-2">
+                                    <div key={skill.category} className="space-y-2.5">
+                                        <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
                                             {skill.category}
                                         </h3>
                                         <div className="flex flex-wrap gap-2">
                                             {skill.items.map((item) => (
-                                                <Badge key={item} variant="secondary">
+                                                <Badge key={item} variant="secondary" className="rounded-full px-3 py-1">
                                                     {item}
                                                 </Badge>
                                             ))}
