@@ -29,7 +29,7 @@ export function Header({ dict, locale }: HeaderProps) {
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    });
+    }, []);
 
     useEffect(() => {
         const sections = navItems.map(item => document.getElementById(item.id));
@@ -58,8 +58,8 @@ export function Header({ dict, locale }: HeaderProps) {
         <header 
             className={`fixed top-0 left-0 right-0 z-100 transition-all duration-300 ${
                 isScrolled 
-                    ? "bg-background/80 backdrop-blur-md border-b border-border/50" 
-                    : "bg-gradient-to-b from-background/80 to-transparent"
+                    ? "bg-background/75 backdrop-blur-xl border-b border-border/50 shadow-sm" 
+                    : "bg-gradient-to-b from-background/90 via-background/40 to-transparent"
             }`}
         >
             <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,17 +72,17 @@ export function Header({ dict, locale }: HeaderProps) {
                         Zielis.
                     </Button>
 
-                    <ul className="hidden md:flex items-center gap-1">
+                    <ul className="hidden md:flex items-center gap-1 rounded-full border border-border/60 bg-card/50 backdrop-blur-md p-1.5">
                         {navItems.map((item) => (
                             <li key={item.id}>
                                 <Button
                                     variant="ghost"
                                     size="sm"
                                     onClick={() => scrollToById(item.id)}
-                                    className={`cursor-none font-medium uppercase tracking-widest text-xs transition-colors ${
+                                    className={`cursor-none font-medium uppercase tracking-widest text-xs transition-all rounded-full px-4 ${
                                         currentSection === item.id 
-                                            ? "text-foreground border-b-2 border-foreground rounded-b-none" 
-                                            : "text-muted-foreground hover:text-foreground"
+                                            ? "text-foreground bg-foreground/10" 
+                                            : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"
                                     }`}
                                 >
                                     {item.label}
@@ -93,7 +93,7 @@ export function Header({ dict, locale }: HeaderProps) {
                             <Button
                                 size="sm"
                                 variant="ghost"
-                                className="cursor-none gap-1.5 text-muted-foreground hover:text-foreground"
+                                className="cursor-none gap-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-foreground/5"
                                 asChild
                             >
                                 <Link href={locale === "pt" ? "/en" : "/pt"}>
@@ -108,7 +108,7 @@ export function Header({ dict, locale }: HeaderProps) {
                             <Button
                                 size="sm"
                                 variant={"outline"}
-                                className="cursor-none"
+                                className="cursor-none rounded-full"
                                 asChild
                             >
                                 <Link 
