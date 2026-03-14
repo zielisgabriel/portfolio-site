@@ -29,7 +29,7 @@ export default async function LangLayout({
         <link href="/logo-zls.png" rel="icon" />
       </head>
 
-      <body className="antialiased dark">
+      <body className="antialiased dark overflow-x-hidden overflow-y-auto" style={{ overflowY: "auto", overflowX: "hidden" }}>
         <Suspense fallback={<GlobalLoading />}>
           <Header dict={dict} locale={lang} />
           <ProgressBarScroll />
