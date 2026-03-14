@@ -33,11 +33,14 @@ export function ProjectsSection({ dict }: ProjectsSectionProps) {
                 </div>
 
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-16 space-y-4">
+                        <p className="inline-flex px-4 py-1 rounded-full border border-border/60 bg-card/40 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                            Portfolio
+                        </p>
                         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
                             {dict.projects.title}
                         </h2>
-                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                        <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
                             {dict.projects.description}
                         </p>
                         <div className="w-20 h-1 bg-foreground mx-auto rounded-full mt-4" />
