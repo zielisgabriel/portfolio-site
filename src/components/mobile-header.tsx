@@ -33,12 +33,12 @@ export function MobileHeader({ navItems, currentSection, dict, currentLocale }: 
               <Button
                   variant={"ghost"}
                   size={"icon"}
-                  className="cursor-none"
+                  className="cursor-none rounded-full border border-border/60 bg-card/50 backdrop-blur-md"
               >
                   <MenuIcon className="h-5 w-5" />
               </Button>
           </SheetTrigger>
-          <SheetContent className="z-100 w-72">
+          <SheetContent className="z-100 w-72 border-l border-border/60 bg-background/90 backdrop-blur-xl">
               <SheetHeader className="pb-2">
                   <SheetTitle className="text-2xl font-bold">
                       Zielis<span className="text-primary">.</span>
@@ -53,11 +53,11 @@ export function MobileHeader({ navItems, currentSection, dict, currentLocale }: 
                           <Button
                               onClick={() => scrollTo(item.id)}
                               variant={currentSection === item.id ? "secondary" : "ghost"}
-                              className="w-full justify-between gap-3 h-12 text-base cursor-none"
+                              className="w-full justify-between gap-3 h-12 text-base cursor-none rounded-xl"
                           >
                               <div className="flex items-center gap-2">
                                   <span className={clsx(
-                                      "p-2 rounded-lg",
+                                      "p-2 rounded-lg transition-colors",
                                       currentSection === item.id 
                                           ? "bg-primary/20 text-primary" 
                                           : "bg-muted"
@@ -87,7 +87,7 @@ export function MobileHeader({ navItems, currentSection, dict, currentLocale }: 
                           <Button
                               asChild
                               variant={currentLocale === "pt" ? "secondary" : "ghost"}
-                              className="flex-1 cursor-none"
+                              className="flex-1 cursor-none rounded-lg"
                           >
                               <Link href="/pt">
                                   <span className="text-lg">🇧🇷</span>
@@ -99,7 +99,7 @@ export function MobileHeader({ navItems, currentSection, dict, currentLocale }: 
                           <Button
                               asChild
                               variant={currentLocale === "en" ? "secondary" : "ghost"}
-                              className="flex-1 cursor-none"
+                              className="flex-1 cursor-none rounded-lg"
                           >
                               <Link href="/en">
                                   <span className="text-lg">🇺🇸</span>
@@ -117,7 +117,7 @@ export function MobileHeader({ navItems, currentSection, dict, currentLocale }: 
                       <Button
                           asChild
                           variant={"outline"}
-                          className="w-full cursor-none"
+                          className="w-full cursor-none rounded-xl"
                       >
                           <Link
                               href="https://docs.google.com/document/d/1yMuvbtr0Nx3zqZJLSM_-SZwGLFiD2XCai85EcAqrv9M/edit?usp=sharing"
@@ -139,7 +139,7 @@ export function MobileHeader({ navItems, currentSection, dict, currentLocale }: 
                       asChild
                       variant={"outline"}
                       size={"sm"}
-                      className="cursor-none"
+                      className="cursor-none rounded-lg"
                   >
                       <Link 
                           href={"https://www.youtube.com/@LilZielis"}
