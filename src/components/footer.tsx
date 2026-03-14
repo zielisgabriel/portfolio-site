@@ -11,7 +11,7 @@ type FooterProps = {
 
 export function Footer({ dict }: FooterProps) {
     return (
-        <footer className="border-t border-border/50 bg-background/50 backdrop-blur-sm">
+        <footer className="border-t border-border/50 bg-background/60 backdrop-blur-md">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     <div className="text-center md:text-left">
@@ -21,10 +21,11 @@ export function Footer({ dict }: FooterProps) {
                         </p>
                     </div>
 
-                    <div className="flex items-center">
+                    <div className="flex items-center gap-1 rounded-full border border-border/60 bg-card/40 p-1">
                         <Button
                             size={"icon"}
                             variant={"ghost"}
+                            className="rounded-full"
                             asChild
                         >
                             <Link
@@ -39,6 +40,7 @@ export function Footer({ dict }: FooterProps) {
                         <Button
                             size={"icon"}
                             variant={"ghost"}
+                            className="rounded-full"
                             asChild
                         >
                             <Link
