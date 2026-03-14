@@ -50,7 +50,7 @@ function TechnologyFilter({
     onClear: () => void;
 }) {
     return (
-        <div className="space-y-4">
+        <div className="space-y-4 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-4 md:p-5">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Filter className="h-4 w-4" />
@@ -76,7 +76,7 @@ function TechnologyFilter({
                             key={tech.id}
                             variant={isSelected ? "default" : "outline"}
                             className={cn(
-                                "cursor-none transition-all duration-200 select-none",
+                                "cursor-none transition-all duration-200 select-none rounded-full px-3 py-1",
                                 isSelected
                                     ? "bg-foreground text-background hover:bg-foreground/90"
                                     : "hover:bg-foreground/10 hover:border-foreground/50"
@@ -106,7 +106,7 @@ function ProjectCard({
         <Card 
             onClick={onSelect}
             className={cn(
-                "group cursor-none transition-all duration-300 overflow-hidden bg-card/50 backdrop-blur-sm border-border/50",
+                "group cursor-none transition-all duration-300 overflow-hidden bg-card/50 backdrop-blur-sm border-border/60 rounded-2xl",
                 "hover:border-foreground/30 hover:shadow-lg hover:shadow-foreground/5 hover:-translate-y-1",
                 isSelected && "border-foreground/50 ring-1 ring-foreground/20"
             )}
@@ -175,7 +175,7 @@ function ProjectDetails({
         <Sheet open={!!project} onOpenChange={(open) => !open && onClose()}>
             <SheetContent
                 side="right"
-                className="w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl gap-0 z-100"
+                className="w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl gap-0 z-100 border-l border-border/60 bg-background/95 backdrop-blur-xl"
             >
                 <Separator className="mt-12" />
                 <ScrollArea className="h-full">
@@ -336,7 +336,7 @@ export function ProjectsList() {
 
     if (isLoading && !projectsResponse) {
         return (
-            <div className="flex flex-col items-center justify-center py-16 gap-4">
+            <div className="flex flex-col items-center justify-center py-16 gap-4 rounded-2xl border border-dashed border-border/60 bg-card/20">
                 <Spinner className="size-8" />
                 <p className="text-sm text-muted-foreground">Loading projects...</p>
             </div>
@@ -362,8 +362,14 @@ export function ProjectsList() {
                 </div>
             )}
 
+            {!!selectedTechIds.length && (
+                <p className="text-sm text-muted-foreground text-center -mt-4">
+                    {selectedTechIds.length} filter{selectedTechIds.length > 1 ? "s" : ""} selected
+                </p>
+            )}
+
             {!projectsResponse?.projects?.length ? (
-                <div className="flex flex-col items-center justify-center py-16 gap-4">
+                <div className="flex flex-col items-center justify-center py-16 gap-4 rounded-2xl border border-dashed border-border/60 bg-card/20">
                     <Folder className="size-12 text-muted-foreground/50" />
                     <p className="text-muted-foreground">
                         {selectedTechIds.length > 0
