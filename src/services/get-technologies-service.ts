@@ -10,7 +10,16 @@ export async function getTechnologiesService() {
   cacheLife("weeks");
 
   const technologies = await prisma.technology.findMany({
-    orderBy: { name: "asc" }
+    orderBy: { name: "asc" },
+    where: {
+      projectTechnologies: {
+        some: {
+          project: {
+            show: true
+          }
+        }
+      }
+    }
   });
 
   return technologies;
