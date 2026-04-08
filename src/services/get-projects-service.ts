@@ -17,17 +17,20 @@ export async function getProjectsService(
 
   const whereClause = technologyIds?.length
     ? {
-        projectTechnologies: {
-          some: {
-            technologyId: { in: technologyIds }
-          }
+      projectTechnologies: {
+        some: {
+          technologyId: { in: technologyIds }
         }
       }
+    }
     : {};
 
   const [projects, totalProjects] = await Promise.all([
     prisma.project.findMany({
-      where: whereClause,
+      where: {
+        ...whereClause,
+        show: true
+      },
       include: {
         projectTechnologies: {
           include: { technology: true }
