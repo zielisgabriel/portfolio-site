@@ -14,7 +14,7 @@ model Project {
   imageUrl            String
   repositoryUrl       String?
   projectUrl          String?
-  show                Boolean               @default(true)
+  show                Boolean?              @default(true)
   projectTechnologies ProjectTechnologies[]
 
   @@map("projects")
