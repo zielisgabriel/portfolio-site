@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
@@ -20,6 +14,7 @@ model Project {
   imageUrl            String
   repositoryUrl       String?
   projectUrl          String?
+  show                Boolean               @default(true)
   projectTechnologies ProjectTechnologies[]
 
   @@map("projects")
@@ -35,10 +30,10 @@ model Technology {
 
 model ProjectTechnologies {
   id           Int        @id @default(autoincrement())
-  technology   Technology @relation(fields: [technologyId], references: [id])
   technologyId Int
-  project      Project    @relation(fields: [projectId], references: [id])
   projectId    Int
+  project      Project    @relation(fields: [projectId], references: [id])
+  technology   Technology @relation(fields: [technologyId], references: [id])
 
   @@unique([projectId, technologyId])
   @@map("project_technologies")
