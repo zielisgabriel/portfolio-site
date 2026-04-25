@@ -1,4 +1,3 @@
-import { NasaApodResponseData } from "@/@types/nasa-apod-response-data";
 import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -6,6 +5,8 @@ import { getLastApodNasaService } from "@/services/get-last-apod-nasa-service";
 
 export async function LastImageNasaApod() {
     const nasaApod = await getLastApodNasaService();
+
+    if (!nasaApod) return null;
 
     return (
         <div className="py-20 md:py-32">
@@ -32,7 +33,7 @@ export async function LastImageNasaApod() {
                             />
                         </div>
                     </CardContent>
-                    
+
                     <CardHeader>
                         <CardTitle className="text-xl">
                             {nasaApod.title}
