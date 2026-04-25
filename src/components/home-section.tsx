@@ -13,7 +13,7 @@ type HomeSectionProps = {
 }
 
 const geist = Geist({
-  weight: ["400", "500", "600", "700", "800", "900"],
+    weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export function HomeSection({ dict }: HomeSectionProps) {
@@ -37,7 +37,7 @@ export function HomeSection({ dict }: HomeSectionProps) {
                             Gabriel
                         </AuroraText>
                     </h1>
-                    
+
                     <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium">
                         {dict.all.stack}
                     </p>
@@ -82,7 +82,7 @@ export function HomeSection({ dict }: HomeSectionProps) {
                     <div className="flex flex-col sm:flex-row lg:justify-start justify-center gap-2.5 pt-1">
                         <ScrollToProjectsSectionButton dict={dict} />
                         <Button variant="outline" size="lg" className="cursor-none bg-card/50" asChild>
-                            <Link 
+                            <Link
                                 href="https://docs.google.com/document/d/1yMuvbtr0Nx3zqZJLSM_-SZwGLFiD2XCai85EcAqrv9M/edit?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
