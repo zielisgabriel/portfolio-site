@@ -6,14 +6,21 @@ import { cacheLife, cacheTag } from "next/cache";
 
 const NASA_API_KEY = process.env.NASA_API_KEY;
 
-export async function getLastApodNasaService(): Promise<NasaApodResponseData> {
+export async function getLastApodNasaService(): Promise<NasaApodResponseData | null> {
     "use cache";
     cacheTag("apod-nasa");
     cacheLife("days");
 
-    const response = await fetchClient({
-        path: `/planetary/apod?api_key=${NASA_API_KEY}`,
-        host: "https://api.nasa.gov"
-    });
-    return await response.json();
+    try {
+        const response = await fetchClient({
+            path: `/planetary/apod?api_key=${NASA_API_KEY}`,
+            host: "https://api.nasa.gov"
+        });
+
+        if (!response.ok) return null;
+
+        return await response.json();
+    } catch (error) {
+        return null;
+    }
 }
