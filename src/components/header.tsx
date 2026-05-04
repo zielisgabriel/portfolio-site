@@ -55,19 +55,18 @@ export function Header({ dict, locale }: HeaderProps) {
     }, []);
 
     return (
-        <header 
-            className={`fixed top-0 left-0 right-0 z-100 transition-all duration-300 ${
-                isScrolled 
-                    ? "bg-background/75 backdrop-blur-xl border-b border-border/50 shadow-sm" 
-                    : "bg-gradient-to-b from-background/90 via-background/40 to-transparent"
-            }`}
+        <header
+            className={`fixed top-0 left-0 right-0 z-100 transition-all duration-300 ${isScrolled
+                ? "bg-background/75 backdrop-blur-xl border-b border-border/50 shadow-sm"
+                : "bg-gradient-to-b from-background/90 via-background/40 to-transparent"
+                }`}
         >
             <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 md:h-20">
                     <Button
                         variant={"ghost"}
                         onClick={() => { scrollToById("home"); }}
-                        className="font-bold text-xl tracking-tight hover:text-primary transition-colors cursor-none"
+                        className="font-bold text-xl tracking-tight hover:text-primary transition-colors"
                     >
                         Zielis.
                     </Button>
@@ -79,11 +78,10 @@ export function Header({ dict, locale }: HeaderProps) {
                                     variant="ghost"
                                     size="sm"
                                     onClick={() => scrollToById(item.id)}
-                                    className={`cursor-none font-medium uppercase tracking-widest text-xs transition-all rounded-full px-4 ${
-                                        currentSection === item.id 
-                                            ? "text-foreground bg-foreground/10" 
-                                            : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"
-                                    }`}
+                                    className={` font-medium uppercase tracking-widest text-xs transition-all rounded-full px-4 ${currentSection === item.id
+                                        ? "text-foreground bg-foreground/10"
+                                        : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"
+                                        }`}
                                 >
                                     {item.label}
                                 </Button>
@@ -93,7 +91,7 @@ export function Header({ dict, locale }: HeaderProps) {
                             <Button
                                 size="sm"
                                 variant="ghost"
-                                className="cursor-none gap-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-foreground/5"
+                                className=" gap-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-foreground/5"
                                 asChild
                             >
                                 <Link href={locale === "pt" ? "/en" : "/pt"}>
@@ -108,10 +106,10 @@ export function Header({ dict, locale }: HeaderProps) {
                             <Button
                                 size="sm"
                                 variant={"outline"}
-                                className="cursor-none rounded-full"
+                                className=" rounded-full"
                                 asChild
                             >
-                                <Link 
+                                <Link
                                     href="https://docs.google.com/document/d/1yMuvbtr0Nx3zqZJLSM_-SZwGLFiD2XCai85EcAqrv9M/edit?usp=sharing"
                                     target="_blank"
                                     rel="noopener noreferrer"

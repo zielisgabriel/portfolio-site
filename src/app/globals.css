@@ -46,7 +46,7 @@
   --color-border-color-foreground: var(--border-color-foreground);
 
   --animate-item-float: item-float 4500ms ease-in-out infinite;
-  --animate-dot-float-loader: item-float 600ms  ease-in-out infinite;
+  --animate-dot-float-loader: item-float 600ms ease-in-out infinite;
   --animate-from-left-screen-to-right-screen: from-left-screen-to-right-screen 10s linear infinite;
   --animate-fade-in: fade-in 500ms ease-in-out;
   --color-sidebar-ring: var(--sidebar-ring);
@@ -82,10 +82,12 @@
     0% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-0.7rem);
       rotate: 1.5deg;
     }
+
     100% {
       transform: translateY(0);
     }
@@ -96,9 +98,11 @@
       opacity: 0;
       transform: translateX(-800%);
     }
+
     50% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
       transform: translateX(800%);
@@ -109,6 +113,7 @@
     0% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
@@ -120,8 +125,7 @@
 
   --radius-lg: var(--radius);
 
-  --radius-xl: calc(var(--radius) + 4px)
-;
+  --radius-xl: calc(var(--radius) + 4px);
 
   --radius-2xl: calc(var(--radius) + 8px);
 
@@ -130,65 +134,86 @@
   --radius-4xl: calc(var(--radius) + 16px);
 
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
+
   @keyframes aurora {
-  0% {
-    background-position: 0% 50%;
-    transform: rotate(-5deg) scale(0.9);
+    0% {
+      background-position: 0% 50%;
+      transform: rotate(-5deg) scale(0.9);
     }
-  25% {
-    background-position: 50% 100%;
-    transform: rotate(5deg) scale(1.1);
+
+    25% {
+      background-position: 50% 100%;
+      transform: rotate(5deg) scale(1.1);
     }
-  50% {
-    background-position: 100% 50%;
-    transform: rotate(-3deg) scale(0.95);
+
+    50% {
+      background-position: 100% 50%;
+      transform: rotate(-3deg) scale(0.95);
     }
-  75% {
-    background-position: 50% 0%;
-    transform: rotate(3deg) scale(1.05);
+
+    75% {
+      background-position: 50% 0%;
+      transform: rotate(3deg) scale(1.05);
     }
-  100% {
-    background-position: 0% 50%;
-    transform: rotate(-5deg) scale(0.9);
+
+    100% {
+      background-position: 0% 50%;
+      transform: rotate(-5deg) scale(0.9);
     }
   }
+
   --animate-shiny-text: shiny-text 8s infinite;
+
   @keyframes shiny-text {
-  0%, 90%, 100% {
-    background-position: calc(-100% - var(--shiny-width)) 0;
+
+    0%,
+    90%,
+    100% {
+      background-position: calc(-100% - var(--shiny-width)) 0;
     }
-  30%, 60% {
-    background-position: calc(100% + var(--shiny-width)) 0;
+
+    30%,
+    60% {
+      background-position: calc(100% + var(--shiny-width)) 0;
     }
   }
+
   --animate-meteor: meteor 5s linear infinite;
+
   @keyframes meteor {
-  0% {
-    transform: rotate(var(--angle)) translateX(0);
-    opacity: 1;
+    0% {
+      transform: rotate(var(--angle)) translateX(0);
+      opacity: 1;
     }
-  70% {
-    opacity: 1;
+
+    70% {
+      opacity: 1;
     }
-  100% {
-    transform: rotate(var(--angle)) translateX(-500px);
-    opacity: 0;
+
+    100% {
+      transform: rotate(var(--angle)) translateX(-500px);
+      opacity: 0;
     }
   }
+
   --animate-line-shadow: line-shadow 15s linear infinite;
+
   @keyframes line-shadow {
-  0% {
-    background-position: 0 0;
+    0% {
+      background-position: 0 0;
     }
-  100% {
-    background-position: 100% -100%;
+
+    100% {
+      background-position: 100% -100%;
     }
-  }}
+  }
+}
 
 @layer utilities {
   .delay-50 {
     animation-delay: 50ms;
   }
+
   .delay-100 {
     animation-delay: 100ms;
   }
@@ -199,7 +224,6 @@
 }
 
 body {
-  cursor: none;
   color: #f5f9ff;
   background: #000000;
 
@@ -259,6 +283,7 @@ strong {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

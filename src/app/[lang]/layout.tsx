@@ -6,7 +6,6 @@ import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { GlobalLoading } from "@/components/global-loading";
-import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export async function generateStaticParams() {
   return [{ lang: 'pt' }, { lang: 'en' }];
@@ -17,9 +16,9 @@ export default async function LangLayout({
   params
 }: Readonly<{
   children: React.ReactNode,
-  params: Promise<{lang: string}>
+  params: Promise<{ lang: string }>
 }>) {
-  const {lang} = await params;
+  const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
 
@@ -33,15 +32,6 @@ export default async function LangLayout({
         <Suspense fallback={<GlobalLoading />}>
           <Header dict={dict} locale={lang} />
           <ProgressBarScroll />
-          {/* <CustomCursor /> */}
-          <SmoothCursor
-            springConfig={{
-              mass: 0.5,
-              stiffness: 15000,
-              damping: 200,
-              restDelta: 0
-            }}
-          />
           {children}
           <Footer dict={dict} />
         </Suspense>

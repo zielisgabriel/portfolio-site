@@ -8,7 +8,7 @@ export function HomeButton() {
     <Button
       variant={"ghost"}
       onClick={() => { scrollToById("home"); }}
-      className="font-bold text-xl tracking-tight hover:text-primary transition-colors cursor-none"
+      className="font-bold text-xl tracking-tight hover:text-primary transition-colors"
     >
       Zielis.
     </Button>
