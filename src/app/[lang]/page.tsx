@@ -6,6 +6,7 @@ import { AboutSection } from "@/components/about-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { notFound } from "next/navigation";
+import { ContactSection } from "@/components/contact-section";
 
 export const metadata: Metadata = {
   title: "Zielis Gabriel | Portfolio",
@@ -33,6 +34,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <LastImageNasaApod />
       </section>
       <ProjectsSection dict={dict} />
+      <ContactSection dict={dict} />
     </main>
   );
 }

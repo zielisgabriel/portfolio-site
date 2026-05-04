@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import { GlobeIcon, HouseIcon, PaperclipIcon, PresentationIcon, UserSearch } from "lucide-react";
+import { GlobeIcon, HouseIcon, MailIcon, PaperclipIcon, PresentationIcon, UserSearch } from "lucide-react";
 import Link from "next/link";
 import { scrollToById } from "@/utils/scroll-to-by-id";
 import { MobileHeader } from "./mobile-header";
@@ -20,6 +20,7 @@ export function Header({ dict, locale }: HeaderProps) {
         { id: "home", label: dict.header.home, icon: <HouseIcon /> },
         { id: "about", label: dict.header.about, icon: <UserSearch /> },
         { id: "projects", label: dict.header.projects, icon: <PresentationIcon /> },
+        { id: "contact", label: dict.header.contact, icon: <MailIcon /> },
     ];
 
     useEffect(() => {

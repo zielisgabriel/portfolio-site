@@ -7,6 +7,7 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
+    "contact": "Contact",
     "resume": "Resume",
     "my_music_channel": "My music channel",
     "language": "Language"
@@ -47,6 +48,33 @@
   "projects": {
     "title": "Projects",
     "description": "Some of the projects I've built, applying best practices and modern technologies."
+  },
+  "contact": {
+    "badge": "Get in touch",
+    "title": "Let's work together",
+    "description": "Have a project in mind or just want to say hello? Feel free to reach out — I'm always open to new opportunities and collaborations.",
+    "form": {
+      "name": "Name",
+      "name_placeholder": "Your name",
+      "email": "Email",
+      "email_placeholder": "your@email.com",
+      "subject": "Subject",
+      "subject_placeholder": "What is it about?",
+      "message": "Message",
+      "message_placeholder": "Tell me about your project...",
+      "send": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Something went wrong. Please try again."
+    },
+    "info": {
+      "email_label": "Email",
+      "location_label": "Location",
+      "location_value": "Brazil",
+      "availability_label": "Availability",
+      "availability_value": "Open for freelance",
+      "social_label": "Social"
+    }
   },
   "footer": {
     "copyright": "All rights reserved."

@@ -7,6 +7,7 @@
     "home": "Início",
     "about": "Sobre",
     "projects": "Projetos",
+    "contact": "Contato",
     "resume": "Currículo",
     "my_music_channel": "Meu canal de músicas",
     "language": "Linguagem"
@@ -47,6 +48,33 @@
   "projects": {
     "title": "Projetos",
     "description": "Alguns dos projetos que desenvolvi, aplicando as melhores práticas e tecnologias modernas."
+  },
+  "contact": {
+    "badge": "Entre em contato",
+    "title": "Vamos trabalhar juntos",
+    "description": "Tem um projeto em mente ou quer apenas dizer olá? Fique à vontade para entrar em contato — estou sempre aberto a novas oportunidades e colaborações.",
+    "form": {
+      "name": "Nome",
+      "name_placeholder": "Seu nome",
+      "email": "Email",
+      "email_placeholder": "seu@email.com",
+      "subject": "Assunto",
+      "subject_placeholder": "Sobre o que é?",
+      "message": "Mensagem",
+      "message_placeholder": "Conte-me sobre seu projeto...",
+      "send": "Enviar mensagem",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Algo deu errado. Tente novamente."
+    },
+    "info": {
+      "email_label": "Email",
+      "location_label": "Localização",
+      "location_value": "Brasil",
+      "availability_label": "Disponibilidade",
+      "availability_value": "Aberto para freelance",
+      "social_label": "Redes sociais"
+    }
   },
   "footer": {
     "copyright": "Todos os direitos reservados."
