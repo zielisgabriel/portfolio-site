@@ -46,3 +46,9 @@ next-env.d.ts
 
 # database file
 **.db
+
+# vscode
+/.vscode/
+
+# agents
+/.agents/
