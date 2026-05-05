@@ -54,7 +54,7 @@ export function HomeSection({ dict }: HomeSectionProps) {
                             href="https://github.com/zielisgabriel"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-3 rounded-full border border-border/60 bg-card/60 hover:bg-card hover:border-foreground/30 transition-all cursor-none"
+                            className="p-3 rounded-full border border-border/60 bg-card/60 hover:bg-card hover:border-foreground/30 transition-all"
                             aria-label="GitHub"
                         >
                             <FaGithub className="h-5 w-5" />
@@ -63,7 +63,7 @@ export function HomeSection({ dict }: HomeSectionProps) {
                             href="https://www.linkedin.com/in/josgabrielalmeida/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-3 rounded-full border border-border/60 bg-card/60 hover:bg-card hover:border-foreground/30 transition-all cursor-none"
+                            className="p-3 rounded-full border border-border/60 bg-card/60 hover:bg-card hover:border-foreground/30 transition-all"
                             aria-label="LinkedIn"
                         >
                             <FaLinkedin className="h-5 w-5" />
@@ -72,7 +72,7 @@ export function HomeSection({ dict }: HomeSectionProps) {
                             href="https://www.instagram.com/zielis085/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-3 rounded-full border border-border/60 bg-card/60 hover:bg-card hover:border-foreground/30 transition-all cursor-none"
+                            className="p-3 rounded-full border border-border/60 bg-card/60 hover:bg-card hover:border-foreground/30 transition-all"
                             aria-label="Instagram"
                         >
                             <FaInstagram className="h-5 w-5" />

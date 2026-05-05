@@ -61,7 +61,7 @@ function TechnologyFilter({
                         variant="ghost"
                         size="sm"
                         onClick={onClear}
-                        className="h-7 px-2 text-xs cursor-none"
+                        className="h-7 px-2 text-xs"
                     >
                         <X className="h-3 w-3 mr-1" />
                         Clear filters
@@ -76,7 +76,7 @@ function TechnologyFilter({
                             key={tech.id}
                             variant={isSelected ? "default" : "outline"}
                             className={cn(
-                                "cursor-none transition-all duration-200 select-none rounded-full px-3 py-1",
+                                " transition-all duration-200 select-none rounded-full px-3 py-1",
                                 isSelected
                                     ? "bg-foreground text-background hover:bg-foreground/90"
                                     : "hover:bg-foreground/10 hover:border-foreground/50"
@@ -93,20 +93,20 @@ function TechnologyFilter({
     );
 }
 
-function ProjectCard({ 
-    project, 
-    onSelect, 
-    isSelected 
-}: { 
-    project: Project; 
-    onSelect: () => void; 
+function ProjectCard({
+    project,
+    onSelect,
+    isSelected
+}: {
+    project: Project;
+    onSelect: () => void;
     isSelected: boolean;
 }) {
     return (
-        <Card 
+        <Card
             onClick={onSelect}
             className={cn(
-                "group cursor-none transition-all duration-300 overflow-hidden bg-card/50 backdrop-blur-sm border-border/60 rounded-2xl",
+                "group transition-all duration-300 overflow-hidden bg-card/50 backdrop-blur-sm border-border/60 rounded-2xl",
                 "hover:border-foreground/30 hover:shadow-lg hover:shadow-foreground/5 hover:-translate-y-1",
                 isSelected && "border-foreground/50 ring-1 ring-foreground/20"
             )}
@@ -124,7 +124,7 @@ function ProjectCard({
                     {project.description}
                 </CardDescription>
             </CardHeader>
-            
+
             {project.imageUrl && (
                 <CardContent className="pb-3">
                     <div className="relative overflow-hidden rounded-lg border border-border/50 aspect-video">
@@ -139,13 +139,13 @@ function ProjectCard({
                     </div>
                 </CardContent>
             )}
-            
+
             <CardFooter className="pt-0">
                 <div className="flex flex-wrap gap-1.5">
                     {project.projectTechnologies?.slice(0, 3).map((tech) => (
-                        <Badge 
-                            key={tech.id} 
-                            variant="secondary" 
+                        <Badge
+                            key={tech.id}
+                            variant="secondary"
                             className="text-xs px-2 py-0.5"
                         >
                             {tech.technology.name}
@@ -162,11 +162,11 @@ function ProjectCard({
     );
 }
 
-function ProjectDetails({ 
-    project, 
-    onClose 
-}: { 
-    project: Project | null; 
+function ProjectDetails({
+    project,
+    onClose
+}: {
+    project: Project | null;
     onClose: () => void;
 }) {
     if (!project) return null;
@@ -219,8 +219,8 @@ function ProjectDetails({
                             </h3>
                             <div className="flex flex-wrap gap-2">
                                 {project.projectTechnologies?.map((tech) => (
-                                    <Badge 
-                                        key={tech.id} 
+                                    <Badge
+                                        key={tech.id}
                                         variant="secondary"
                                         className="px-3 py-1"
                                     >
@@ -238,9 +238,9 @@ function ProjectDetails({
                             </h3>
                             <div className="grid gap-3">
                                 {project.repositoryUrl && (
-                                    <Button 
-                                        variant="outline" 
-                                        className="w-full justify-between h-12 cursor-none group/btn" 
+                                    <Button
+                                        variant="outline"
+                                        className="w-full justify-between h-12 group/btn"
                                         asChild
                                     >
                                         <Link
@@ -258,8 +258,8 @@ function ProjectDetails({
                                 )}
 
                                 {project.projectUrl && (
-                                    <Button 
-                                        className="w-full justify-between h-12 cursor-none group/btn" 
+                                    <Button
+                                        className="w-full justify-between h-12 group/btn"
                                         asChild
                                     >
                                         <Link
@@ -381,7 +381,7 @@ export function ProjectsList() {
                             variant="outline"
                             size="sm"
                             onClick={handleClearFilters}
-                            className="cursor-none"
+                            className=""
                         >
                             Clear filters
                         </Button>
@@ -389,7 +389,7 @@ export function ProjectsList() {
                 </div>
             ) : (
                 <>
-                    <div 
+                    <div
                         className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto"
                         onMouseEnter={prefetchNextPage}
                     >
@@ -416,9 +416,9 @@ export function ProjectsList() {
                 </>
             )}
 
-            <ProjectDetails 
-                project={selectedProject} 
-                onClose={() => setSelectedProject(null)} 
+            <ProjectDetails
+                project={selectedProject}
+                onClose={() => setSelectedProject(null)}
             />
         </div>
     );
