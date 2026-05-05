@@ -2,11 +2,14 @@ import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { getLastApodNasaService } from "@/services/get-last-apod-nasa-service";
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export async function LastImageNasaApod() {
     const nasaApod = await getLastApodNasaService();
-
     if (!nasaApod) return null;
+
+    const isNasaApodVideo = nasaApod.url.endsWith(".mp4");
 
     return (
         <div className="py-20 md:py-32">
@@ -20,17 +23,35 @@ export async function LastImageNasaApod() {
                     </h2>
                 </div>
 
-                <Card className="overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm">
+                <Card className={twMerge(clsx("overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm mx-auto", {
+                    isNasaApodVideo: "w-fit"
+                }))}>
                     <CardContent>
-                        <div className="relative aspect-video overflow-hidden">
-                            <Image
-                                src={nasaApod.url}
-                                alt={nasaApod.title}
-                                fill
-                                quality={90}
-                                className="object-cover rounded-xl"
-                                priority
-                            />
+                        <div className={twMerge(clsx("relative overflow-hidden rounded-xl aspect-video", {
+                            isNasaApodVideo: "aspect-auto"
+                        }))}>
+                            {isNasaApodVideo ? (
+                                <video
+                                    muted
+                                    loop
+                                    autoPlay
+                                >
+                                    <source
+                                        src={nasaApod.url}
+                                    />
+                                </video>
+                            ) : (
+                                <Image
+                                    src={nasaApod.url}
+                                    alt={nasaApod.title}
+                                    fill
+                                    quality={90}
+                                    className="object-cover rounded-xl"
+                                    priority
+                                    placeholder="blur"
+                                    blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mOc/goAAh4Bgzn7SWMAAAAASUVORK5CYII="
+                                />
+                            )}
                         </div>
                     </CardContent>
 
