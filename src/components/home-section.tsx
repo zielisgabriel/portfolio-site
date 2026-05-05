@@ -99,6 +99,7 @@ export function HomeSection({ dict }: HomeSectionProps) {
                     alt="Astronaut floating in space"
                     className="hidden lg:block animate-item-float translate-x-16 translate-y-10 max-w-[520px] h-auto"
                     priority
+                    loading="eager"
                 />
             </div>
 
