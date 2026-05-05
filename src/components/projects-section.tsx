@@ -19,7 +19,7 @@ export function ProjectsSection({ dict }: ProjectsSectionProps) {
             }
         }
     });
-    
+
     return (
         <QueryClientProvider client={queryClient}>
             <section id="projects" className="relative py-20 md:py-32 overflow-hidden">
@@ -29,6 +29,7 @@ export function ProjectsSection({ dict }: ProjectsSectionProps) {
                         alt="Space Station"
                         className="w-96 animate-item-float"
                         priority
+                        loading="eager"
                     />
                 </div>
 

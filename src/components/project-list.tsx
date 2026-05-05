@@ -134,6 +134,8 @@ function ProjectCard({
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                             unoptimized
+                            placeholder="blur"
+                            blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mOc/goAAh4Bgzn7SWMAAAAASUVORK5CYII="
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
@@ -188,6 +190,8 @@ function ProjectDetails({
                                     fill
                                     className="object-cover"
                                     priority
+                                    placeholder="blur"
+                                    blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mOc/goAAh4Bgzn7SWMAAAAASUVORK5CYII="
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
                             </div>
@@ -349,6 +353,7 @@ export function ProjectsList() {
                 src={Astronaut2}
                 alt="Astronaut floating in space"
                 className="absolute w-80 -left-96 top-20 animate-item-float md:block hidden pointer-events-none select-none"
+                loading="eager"
             />
 
             {technologies.length > 0 && (
